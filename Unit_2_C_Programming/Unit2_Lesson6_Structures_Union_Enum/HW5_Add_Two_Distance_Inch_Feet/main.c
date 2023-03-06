@@ -7,16 +7,13 @@
 #include <stdio.h>
 
 /*Note: 1 feet = 12  inches*/
-
 typedef struct {
 	float inch;
 	int feet;
 
 }Distance;
 
-
 int main(int argc, char **argv) {
-
 
 Distance d1,d2,sum;
 printf("Enter information of Distance-1\n");
@@ -47,9 +44,6 @@ if(sum.inch>=12.0)
 }
 printf("Sum of distances = %d' -%.1f\" ",sum.feet,sum.inch);
 
-
 	return 0;
-
-
 }
 
