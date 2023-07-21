@@ -9,7 +9,7 @@ void UART_voidSendString(unsigned char* P_Tx_String)
 	
 	while(*P_Tx_String !='\0')
 	{
-		
+		//Send character by character
 		UART0DR = (unsigned int)(*P_Tx_String);
 		P_Tx_String++;
 		
