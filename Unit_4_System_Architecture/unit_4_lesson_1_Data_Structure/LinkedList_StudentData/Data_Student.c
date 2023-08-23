@@ -1,0 +1,240 @@
+/*
+ * Data_Student.c
+ *
+ *  Created on: Aug 20, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <conio.h>
+#include "Data_Student.h"
+
+struct SStudent_t * Head = NULL;
+
+
+void  AddStudent()
+{
+	uint8_t temp[40]={0};
+	struct SStudent_t * PLaststudent ;
+	struct SStudent_t * PNewStudent;
+	struct SStudent_t * TempP;
+	uint8_t FirstStudentFlag=0;
+	uint8_t ExistFlag=0;
+	//check if the Head is Null, then you are the first student
+	if (Head == NULL)
+	{
+		//create new student
+
+		PNewStudent = (struct SStudent_t *) malloc(sizeof(struct SStudent_t ));
+		//Assign Head to the new student
+		Head =PNewStudent;
+		PNewStudent->PNextStudent=NULL;
+		FirstStudentFlag=1;
+
+	}
+	else
+	{ //list not empty, so you need to reach the final node , assign its pointer to your new node , assign your new ponter node to null
+
+		//Loop till final node
+		PLaststudent = Head;
+		while(PLaststudent->PNextStudent)
+		{
+			PLaststudent=PLaststudent->PNextStudent;
+		}
+		PNewStudent = (struct SStudent_t *) malloc(sizeof(struct SStudent_t ));
+		PLaststudent->PNextStudent = PNewStudent;
+		//		PNewStudent->PNextStudent =NULL;
+		PNewStudent->PNextStudent=NULL;
+
+	}
+
+	//Record Data
+	DPRINT("Enter student ID\n");
+	gets(temp);
+	if(FirstStudentFlag ==1 )
+	{
+
+		PNewStudent->student.ID = atoi(temp);
+
+		DPRINT("Enter student name\n");
+		gets(PNewStudent->student.Name);
+
+		DPRINT("Enter student Age\n");
+		gets(temp);
+		PNewStudent->student.Age = atoi(temp);
+
+		DPRINT("Enter student Height\n");
+		gets(temp);
+		PNewStudent->student.Height = atof(temp);
+
+	}
+	else
+	{
+		/*check if entered ID exist or not*/
+		TempP = Head;
+		while(TempP)
+		{
+			if(TempP->student.ID == atoi(temp))
+			{
+				DPRINT("The Entered Id is already exist\n");
+				ExistFlag =1;
+				break;
+			}
+			else
+			{
+				TempP=TempP->PNextStudent;
+
+			}
+
+
+		}
+		if(ExistFlag==0)
+		{
+			PNewStudent->student.ID = atoi(temp);
+
+			DPRINT("Enter student name\n");
+			gets(PNewStudent->student.Name);
+
+			DPRINT("Enter student Age\n");
+			gets(temp);
+			PNewStudent->student.Age = atoi(temp);
+
+			DPRINT("Enter student Height\n");
+			gets(temp);
+			PNewStudent->student.Height = atof(temp);
+
+			PNewStudent->PNextStudent=NULL;
+
+
+		}
+
+
+	}
+}
+
+/**************************************************************************************/
+/*********************************DeleteAll*****************************************/
+/**************************************************************************************/
+
+void DeleteAll(){
+	struct SStudent_t * PLoop = Head;
+	struct SStudent_t * Temp = PLoop;
+
+	if(Head == NULL)
+	{
+		DPRINT("\n\n List is already empty");
+		DPRINT("\n=================================\n\n");
+	}
+	else
+	{
+		while(PLoop)
+		{
+			Temp=PLoop;
+			PLoop=PLoop->PNextStudent;
+			free(Temp);
+		}
+		Head=NULL;
+
+		DPRINT("\n\n List is  Deleted");
+		DPRINT("\n=================================\n\n");
+	}
+}
+
+
+/**************************************************************************************/
+/*********************************DeleteID****************************************/
+/**************************************************************************************/
+
+
+void DeleteID(uint8_t ID)
+{
+
+	struct SStudent_t * CurruntP = Head;
+	struct SStudent_t * PeriviousP = NULL;
+	uint8_t flag=0;
+
+	if(Head == NULL)
+	{
+		DPRINT("\n\n List is empty");
+		DPRINT("\n=================================\n\n");
+	}
+
+
+	while(CurruntP)
+	{
+		if(CurruntP->student.ID ==ID )
+		{
+
+			if(PeriviousP==NULL)
+			{
+				//the ID is at first node
+				Head=Head->PNextStudent;
+				free(CurruntP);
+				flag =1;
+				break;
+			}
+			PeriviousP->PNextStudent = CurruntP->PNextStudent;
+			//CurruntP=CurruntP->PNextStudent;
+
+			free(CurruntP);
+		}
+		else
+		{
+			PeriviousP=CurruntP;
+			CurruntP=CurruntP->PNextStudent;
+		}
+		if((flag ==0)&&CurruntP->PNextStudent==NULL)
+		{
+
+			PeriviousP->PNextStudent=NULL;
+			free(CurruntP);
+		}
+
+		if(flag ==0)
+			printf("\n<<<<Sorry! Your ID isn't recorded>>>>\n");
+		break;
+
+	}
+
+
+}
+
+/**************************************************************************************/
+/*********************************PrintAll****************************************/
+/**************************************************************************************/
+
+
+
+void PrintAll(){
+	struct SStudent_t * PPrintStudent = Head;
+	uint32_t i=1;
+	//check if the head is Null , Then Empty list
+	if(Head == NULL)
+	{
+		DPRINT("Empty\n\n");
+	}
+	else
+	{
+
+		//navigate till end , and each time print the recorded data
+
+		while(PPrintStudent)
+		{
+			DPRINT("Record %d\n",i);
+			DPRINT("\t\tStudent Name: %s\n",PPrintStudent->student.Name);
+			DPRINT("\t\tStudent ID: %d\n",PPrintStudent->student.ID);
+			DPRINT("\t\tStudent Height: %f\n",PPrintStudent->student.Height);
+			i++;
+			PPrintStudent = PPrintStudent->PNextStudent;
+		}
+
+	}
+
+
+}
+
+
+
