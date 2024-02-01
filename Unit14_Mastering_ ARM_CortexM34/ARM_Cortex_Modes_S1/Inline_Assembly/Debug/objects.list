@@ -1,0 +1,7 @@
+"Src/main.o"
+"Src/stm32f103x8_EXTI_driver.o"
+"Src/stm32f103x8_RCC_driver.o"
+"Src/stm32f103x8_gpio_driver.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Startup/startup_stm32f103c6tx.o"
