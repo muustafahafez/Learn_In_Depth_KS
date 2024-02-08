@@ -12,53 +12,47 @@
 #endif
 
 #include "GPIO.h"
+#include "EXTI.h"
 #include "STM32f103Cxx.h"
+
+
+void TOG_LED()
+{
+	MCAL_GPIO_voidTogglePin(GPIOC, GPIO_PIN_13);
+}
+
+
 
 int main(void)
 {
-	uint32_t i,j;
 
 	RCC_GPIOA_CLK_EN();
 	RCC_GPIOB_CLK_EN();
 	RCC_GPIOC_CLK_EN();
+	RCC_GPIOD_CLK_EN();
+	RCC_AFIO_CLK_EN();
 
-	Pin_Config_t Pin_config = {GPIO_PIN_2,GPIO_PIN_MODE_OUT_PP,GPIO_PIN_SPEED_10M};
-	//Init PINA
-	MCAL_GPIO_voidInit(GPIOA, &Pin_config);
-	//Init PINB
+	//Configuration of Interrupts,PC0->Rising Edge
+	EXTI_PinConfig_t Local_tButton;
+	Local_tButton.CallBackFunc = TOG_LED;
+	Local_tButton.PinConfig = EXTI2PA2;
+	Local_tButton.SenseControl = EXTI_SENSE_RISING_FALLING;
+	Local_tButton.EXTI_State = EXTI_STATE_ENABLE;
+
+	MCAL_EXTI_voidInit(&Local_tButton);
+
+	//Configuration of PINs
+	//Init PINC13
+	Pin_Config_t Pin_config = {GPIO_PIN_13,GPIO_PIN_MODE_OUT_PP,GPIO_PIN_SPEED_10M};
+	MCAL_GPIO_voidInit(GPIOC, &Pin_config);
+	//Init PINB0
 	Pin_config.GPIO_PinNum = GPIO_PIN_0;
 	MCAL_GPIO_voidInit(GPIOB, &Pin_config);
-	//Init PINC -> input float
-	Pin_config.GPIO_PinNum = GPIO_PIN_14;
-	Pin_config.GPIO_PinMode = GPIO_PIN_MODE_INP_FLO;
-	MCAL_GPIO_voidInit(GPIOC, &Pin_config);
 	/* Loop forever */
+
 	while(1)
 	{
-		{
-//		//Toggle every 1 second;
 
-		MCAL_GPIO_voidWritePort(GPIOB, 0x0f);
-		//delay
-		for(i=0;i<1000;i++)
-			for(j=0;j<1000;j++);
-		MCAL_GPIO_voidWritePort(GPIOB, 0x00);
-		//delay
-		for(i=0;i<1000;i++)
-			for(j=0;j<1000;j++);
-		}
-//		if(1)
-		if(MCAL_GPIO_u8ReadPin(GPIOC, GPIO_PIN_14)==GPIO_PIN_STATE_SET)
-
-		{
-			MCAL_GPIO_voidWritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_STATE_SET);
-		}
-		else
-		{
-			MCAL_GPIO_voidWritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_STATE_RESET);
-		}
-
-		//		MCAL_GPIO_voidTogglePin(GPIOA, GPIO_PIN_2);
 	}
 
 

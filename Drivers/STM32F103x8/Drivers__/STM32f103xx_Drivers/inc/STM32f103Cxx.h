@@ -39,8 +39,6 @@
 //					 End-Base addresses for Memories
 //===================================================================
 //===================================================================
-//===================================================================
-//===================================================================
 
 
 
@@ -78,10 +76,37 @@
 //					 End-Base addresses for BUS Peripherals
 //===================================================================
 //===================================================================
-//===================================================================
-//===================================================================
 
 
+//===================================================================
+//					 Start-CORTEX_M3_INTERNAL_Register
+//===================================================================
+
+//-*-*-*-*-*-*-*-*-*-*-*-
+//NVIC register:
+//-*-*-*-*-*-*-*-*-*-*-*-
+#define NVIC_BASE_ADDRESS 			0xE000E100UL
+
+#define NVIC_ISER0					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x0))
+#define NVIC_ISER1					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x4))
+#define NVIC_ISER2					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x8))
+
+#define NVIC_ICER0					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x080))
+#define NVIC_ICER1					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x084))
+#define NVIC_ICER2					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x088))
+
+#define NVIC_ISPR0					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x100))
+#define NVIC_ISPR1					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x104))
+#define NVIC_ISPR2					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x108))
+
+#define NVIC_ICPR0					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x180))
+#define NVIC_ICPR1					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x184))
+#define NVIC_ICPR2					*((volatile uint32_t*)(NVIC_BASE_ADDRESS+ 0x188))
+
+//===================================================================
+//					 End-CORTEX_M3_INTERNAL_Register
+//===================================================================
+//===================================================================
 
 
 
@@ -145,10 +170,10 @@ typedef struct
 {
 	volatile uint32_t EVCR			;//Event control register
 	volatile uint32_t MAPR			;//AF remap and debug I/O configuration register
-	volatile uint32_t EXTICR1		;//External interrupt configuration register 1
-	volatile uint32_t EXTICR2		;//External interrupt configuration register 2
-	volatile uint32_t EXTICR3		;//External interrupt configuration register 3
-	volatile uint32_t EXTICR4		;//External interrupt configuration register 4
+	volatile uint32_t EXTICR[4]		;//External interrupt configuration register 1
+//	volatile uint32_t EXTICR2		;//External interrupt configuration register 2
+//	volatile uint32_t EXTICR3		;//External interrupt configuration register 3
+//	volatile uint32_t EXTICR4		;//External interrupt configuration register 4
 	volatile uint32_t Reserved		;//Reserved
 	volatile uint32_t MAPR2			;//AF remap and debug I/O configuration register2
 
@@ -225,9 +250,37 @@ typedef struct
 //					 End-clock enable Macros
 //===================================================================
 //===================================================================
-//===================================================================
-//===================================================================
 
+//===================================================================
+//					 Start-NVIC Macros
+//===================================================================
+//-*-*-*-*-*-*-*-*-*-*-*-
+//NVIC IRQ Enable
+//-*-*-*-*-*-*-*-*-*-*-*-
+
+#define NVIC_IRQ6_EXTI0_ENABLE()			NVIC_ISER0 |= (1<<EXTI0_IRQ)
+#define NVIC_IRQ7_EXTI1_ENABLE()			NVIC_ISER0 |= (1<<EXTI1_IRQ)
+#define NVIC_IRQ8_EXTI2_ENABLE()			NVIC_ISER0 |= (1<<EXTI2_IRQ)
+#define NVIC_IRQ9_EXTI3_ENABLE()			NVIC_ISER0 |= (1<<EXTI3_IRQ)
+#define NVIC_IRQ10_EXTI4_ENABLE()			NVIC_ISER0 |= (1<<EXTI4_IRQ)
+#define NVIC_IRQ23_EXTI9_5_ENABLE()			NVIC_ISER0 |= (1<<EXTI5_IRQ)
+#define NVIC_IRQ40_EXTI15_10_ENABLE()		NVIC_ISER1 |= (1<<8)//40-32
+
+//-*-*-*-*-*-*-*-*-*-*-*-
+//NVIC IRQ Disable
+//-*-*-*-*-*-*-*-*-*-*-*-
+#define NVIC_IRQ6_EXTI0_DISABLE()			NVIC_ICER0 |= (1<<EXTI0_IRQ)
+#define NVIC_IRQ7_EXTI1_DISABLE()			NVIC_ICER0 |= (1<<EXTI1_IRQ)
+#define NVIC_IRQ8_EXTI2_DISABLE()			NVIC_ICER0 |= (1<<EXTI2_IRQ)
+#define NVIC_IRQ9_EXTI3_DISABLE()			NVIC_ICER0 |= (1<<EXTI3_IRQ)
+#define NVIC_IRQ10_EXTI4_DISABLE()			NVIC_ICER0 |= (1<<EXTI4_IRQ)
+#define NVIC_IRQ23_EXTI9_5_DISABLE()		NVIC_ICER0 |= (1<<EXTI5_IRQ)
+#define NVIC_IRQ40_EXTI15_10_DISABLE()		NVIC_ICER1 |= (1<<8)//40-32
+
+//===================================================================
+//					 End-NVIC Macros
+//===================================================================
+//===================================================================
 
 
 
@@ -235,6 +288,31 @@ typedef struct
 //===================================================================
 //					 Start-Generic Macros
 //===================================================================
+
+
+//-*-*-*-*-*-*-*-*-*-*-*-
+//EXTI IRQs Numbers Table 61. Vector table for connectivity line devices (continued)
+
+//-*-*-*-*-*-*-*-*-*-*-*-
+#define EXTI0_IRQ									6
+#define EXTI1_IRQ                                   7
+#define EXTI2_IRQ                                   8
+#define EXTI3_IRQ                                   9
+#define EXTI4_IRQ                                   10
+#define EXTI5_IRQ                                   23
+#define EXTI6_IRQ                                   23
+#define EXTI7_IRQ                                   23
+#define EXTI8_IRQ                                   23
+#define EXTI9_IRQ                                   23
+#define EXTI10_IRQ                                  40
+#define EXTI11_IRQ                                  40
+#define EXTI12_IRQ                                  40
+#define EXTI13_IRQ                                  40
+#define EXTI14_IRQ                                  40
+#define EXTI15_IRQ                                  40
+
+
+
 
 
 //===================================================================

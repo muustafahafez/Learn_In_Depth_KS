@@ -1,3 +1,4 @@
+"STM32f103xx_Drivers/EXTI.o"
 "STM32f103xx_Drivers/GPIO.o"
 "Src/main.o"
 "Src/syscalls.o"

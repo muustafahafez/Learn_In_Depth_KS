@@ -1,0 +1,11 @@
+EXTI.c:18:6:PEXTI_voidUpdate	24	static
+EXTI.c:182:6:MCAL_EXTI_voidDeInit	4	static
+EXTI.c:213:6:MCAL_EXTI_voidInit	16	static
+EXTI.c:228:6:MCAL_EXTI_voidUpdate	16	static
+EXTI.c:244:6:EXTI0_IRQHandler	8	static
+EXTI.c:251:6:EXTI1_IRQHandler	8	static
+EXTI.c:258:6:EXTI2_IRQHandler	8	static
+EXTI.c:264:6:EXTI3_IRQHandler	8	static
+EXTI.c:270:6:EXTI4_IRQHandler	8	static
+EXTI.c:276:6:EXTI9_5_IRQHandler	8	static
+EXTI.c:303:6:EXTI15_10_IRQHandler	8	static
