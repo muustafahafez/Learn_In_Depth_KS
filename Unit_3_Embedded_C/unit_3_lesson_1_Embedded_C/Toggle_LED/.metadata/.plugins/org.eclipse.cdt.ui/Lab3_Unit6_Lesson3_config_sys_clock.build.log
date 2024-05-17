@@ -1,0 +1,20 @@
+19:10:07 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab3_Unit6_Lesson3_config_sys_clock.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson3\Lab3_Unit6_Lesson3_config_sys_clock\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab3_Unit6_Lesson3_config_sys_clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab3_Unit6_Lesson3_config_sys_clock.elf
+ 
+arm-none-eabi-objdump -h -S  Lab3_Unit6_Lesson3_config_sys_clock.elf  > "Lab3_Unit6_Lesson3_config_sys_clock.list"
+arm-none-eabi-objcopy  -O binary  Lab3_Unit6_Lesson3_config_sys_clock.elf  "Lab3_Unit6_Lesson3_config_sys_clock.bin"
+arm-none-eabi-size   Lab3_Unit6_Lesson3_config_sys_clock.elf 
+   text	   data	    bss	    dec	    hex	filename
+    748	      8	   1568	   2324	    914	Lab3_Unit6_Lesson3_config_sys_clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab3_Unit6_Lesson3_config_sys_clock.list
+Finished building: Lab3_Unit6_Lesson3_config_sys_clock.bin
+ 
+ 
+
+19:10:08 Build Finished. 0 errors, 0 warnings. (took 506ms)
+

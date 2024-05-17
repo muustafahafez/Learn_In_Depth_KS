@@ -1,0 +1,10 @@
+00:17:42 **** Incremental Build of configuration Debug for project TIMER ****
+make all 
+Building file: ../DIO_program.c
+Invoking: Cross GCC Compiler
+gccgcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"DIO_program.d" -MT"DIO_program.o" -o "DIO_program.o" "../DIO_program.c"
+/usr/bin/sh: gccgcc: command not found
+make: *** [DIO_program.o] Error 127
+
+00:17:42 Build Finished (took 155ms)
+

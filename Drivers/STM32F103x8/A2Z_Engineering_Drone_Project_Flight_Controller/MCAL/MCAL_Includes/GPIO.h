@@ -1,0 +1,128 @@
+//============================================================================================*
+//==============    Author   	: Eng.Mustafa Hafez     ======================================*
+//==============	Company   	: A2Z Engineering       ======================================*
+//==============	Driver   	: GPIO                  ======================================*
+//==============    Layer    	: MCAL                  ======================================*
+//==============    Version  	: V1.0                  ======================================*
+//============================================================================================*
+
+#ifndef INC_GPIO_H_
+#define INC_GPIO_H_
+
+
+//===================================================================
+//					    	Start-Includes
+//===================================================================
+#include "STM32f103Cxx.h"
+//===================================================================
+//					    	End-Includes
+//===================================================================
+//===================================================================
+
+
+
+
+//===================================================================
+//						Start-User type definitions
+//===================================================================
+typedef struct{
+
+	uint16_t  GPIO_PinNum            ; //Select PinNumber from @ref GPIO_PINs_define
+	uint8_t   GPIO_PinMode           ;//Select PinModer from  @ref GPIO_PIN_MODE_define
+	uint8_t   GPIO_Pin_Output_Speed  ;//Select PinModer from  @ref GPIO_PIN_SPEED_define
+
+}Pin_Config_t;
+
+//===================================================================
+//						End-User type definitions
+//===================================================================
+//===================================================================
+
+
+
+
+//===================================================================
+//						Start-Macros Configuration References
+//===================================================================
+
+//@ref GPIO_PINs_define
+#define GPIO_PIN_0			               (0x0001U)
+#define GPIO_PIN_1			               (0x0002U)
+#define GPIO_PIN_2			               (0x0004U)
+#define GPIO_PIN_3			               (0x0008U)
+#define GPIO_PIN_4			               (0x0010U)
+#define GPIO_PIN_5			               (0x0020U)
+#define GPIO_PIN_6			               (0x0040U)
+#define GPIO_PIN_7			               (0x0080U)
+#define GPIO_PIN_8			               (0x0100U)
+#define GPIO_PIN_9			               (0x0200U)
+#define GPIO_PIN_10			               (0x0400U)
+#define GPIO_PIN_11			               (0x0800U)
+#define GPIO_PIN_12			               (0x1000U)
+#define GPIO_PIN_13			               (0x2000U)
+#define GPIO_PIN_14			               (0x4000U)
+
+
+//@ref GPIO_PIN_MODE_define
+#define GPIO_PIN_MODE_INP_ANALOG 	       (0x00000000U)//Analog
+#define GPIO_PIN_MODE_INP_FLO	           (0x00000001U)//Input floating
+#define GPIO_PIN_MODE_INP_PU 		       (0x00000002U)//Input pull-up
+#define GPIO_PIN_MODE_INP_PD		       (0x00000003U)//Input pull-down
+#define GPIO_PIN_MODE_OUT_PP		       (0x00000004U)//Output push-pull
+#define GPIO_PIN_MODE_OUT_OD		       (0x00000005U)//Output open-drain
+#define GPIO_PIN_MODE_ALT_PP		       (0x00000006U)//Alternate function push-pull
+#define GPIO_PIN_MODE_ALT_OD		       (0x00000007U)// Alternate function open-drain
+#define GPIO_PIN_MODE_ALT_IN		       (0x00000008U)// Alternate function Input
+
+
+
+//@ref GPIO_PIN_SPEED_define
+#define GPIO_PIN_SPEED_10M 	    	       (0x00000001U)//Maximum output speed 10 MHz
+#define GPIO_PIN_SPEED_2M 		           (0x00000002U)//Maximum output speed 2 MHz
+#define GPIO_PIN_SPEED_50M		           (0x00000003U)//Maximum output speed 50 MHz
+
+
+
+//@ref GPIO_PIN_STATE
+#define GPIO_PIN_STATE_RESET			          (0x00U)
+#define GPIO_PIN_STATE_SET			              (0x01U)
+
+//@ref GPIO_PORT_STATE
+#define GPIO_PORT_STATE_RESET			          (0x0000U)
+#define GPIO_PORT_STATE_SET			              (0xFFFFU)
+
+//@ref GPIO_ACCESS_MODE
+#define GPIO_ACCESS_MODE						  GPIO_NORMAL_ACCESS
+#define GPIO_NORMAL_ACCESS						   1
+#define GPIO_ATOMIC_ACCESS						   2
+
+//===================================================================
+//						End-Macros Configuration References
+//===================================================================
+//===================================================================
+
+
+//===================================================================
+//						Start-APIs Supported by "MCAL GPIO DRIVER"
+//===================================================================
+
+void 			MCAL_GPIO_voidInit(GPIO_Typedef* GPIOx,Pin_Config_t* PinConfig);
+void 			MCAL_GPIO_voidDeInit(GPIO_Typedef* GPIOx);
+
+uint8_t 		MCAL_GPIO_u8ReadPin(GPIO_Typedef* GPIOx,uint16_t copy_u16PinNumber);
+uint16_t 		MCAL_GPIO_u16ReadPort(GPIO_Typedef* GPIOx);
+
+void   			MCAL_GPIO_voidWritePin(GPIO_Typedef* GPIOx,uint16_t copy_u16PinNumber,uint8_t copy_u8PinState);
+void 			MCAL_GPIO_voidWritePort(GPIO_Typedef* GPIOx,uint16_t copy_u16PortState);
+
+void 			MCAL_GPIO_voidTogglePin(GPIO_Typedef* GPIOx,uint16_t copy_u16PinNumber);
+void 			MCAL_GPIO_voidTogglePort(GPIO_Typedef* GPIOx);
+
+//===================================================================
+//						End-APIs Supported by "MCAL GPIO DRIVER"
+//===================================================================
+//===================================================================
+
+
+
+#endif /* INC_GPIO_H_ */

@@ -1,0 +1,9 @@
+GPIO.c:14:9:Get_u8CRLH_Position	16	static
+GPIO.c:46:6:MCAL_GPIO_voidInit	32	static
+GPIO.c:107:6:MCAL_GPIO_voidDeInit	16	static
+GPIO.c:146:10:MCAL_GPIO_u8ReadPin	24	static
+GPIO.c:174:10:MCAL_GPIO_u16ReadPort	16	static
+GPIO.c:188:6:MCAL_GPIO_voidWritePin	16	static
+GPIO.c:235:6:MCAL_GPIO_voidWritePort	16	static
+GPIO.c:248:6:MCAL_GPIO_voidTogglePin	16	static
+GPIO.c:264:6:MCAL_GPIO_voidTogglePort	16	static

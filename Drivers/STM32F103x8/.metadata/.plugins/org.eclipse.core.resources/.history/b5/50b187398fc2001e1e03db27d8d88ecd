@@ -1,0 +1,155 @@
+
+
+#include "GPIO.h"
+
+
+uint8_t Get_u8CRLH_Position(uint16_t PinNum)
+{
+	switch(PinNum)
+	{
+	case PIN_NUM_0  : return  0  ; break;
+	case PIN_NUM_1  : return  4  ; break;
+	case PIN_NUM_2  : return  8  ; break;
+	case PIN_NUM_3  : return  12 ; break;
+	case PIN_NUM_4  : return  16 ; break;
+	case PIN_NUM_5  : return  20 ; break;
+	case PIN_NUM_6  : return  24 ; break;
+	case PIN_NUM_7  : return  28 ; break;
+	case PIN_NUM_8  : return  0  ; break;
+	case PIN_NUM_9  : return  4  ; break;
+	case PIN_NUM_10 : return  8  ; break;
+	case PIN_NUM_11 : return  12 ; break;
+	case PIN_NUM_12 : return  16 ; break;
+	case PIN_NUM_13 : return  20 ; break;
+	case PIN_NUM_14 : return  24 ; break;
+	default			: return  28 ; break;
+
+	}
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidInit(GPIO_Typedef* GPIOx,Pin_Config_t* PinConfig)
+{
+
+	volatile uint32_t* Config_Reg = NULL;
+	uint8_t Local_u8PinConfig;
+
+	//Which CR will be selected according to the pin number, PIN0:PIN7 -> CRL , PIN8:PIN14->CRH
+	Config_Reg = (PinConfig->GPIO_PinNum <8)? &(GPIOx->CRL): &(GPIOx->CRH);
+	//First, get the Position:
+//	Clear MODE,CR.
+	(*Config_Reg) &= ~(0x0f<<Get_u8CRLH_Position(PinConfig->GPIO_PinNum));
+
+	//case Pin is output , MODE select speed
+	if((PinConfig->GPIO_PinMode == GPIO_PIN_MODE_OUT_OD)||(PinConfig->GPIO_PinMode == GPIO_PIN_MODE_OUT_PP)||(PinConfig->GPIO_PinMode == GPIO_PIN_MODE_ALT_OD)||(PinConfig->GPIO_PinMode == GPIO_PIN_MODE_ALT_PP))
+	{
+		//Mode - 4 will equal the same number in Datasheet which have to be setted in the CR register
+		Local_u8PinConfig = ((((PinConfig->GPIO_PinMode - 4)<<2)|(PinConfig->GPIO_Pin_Output_Speed)) &0x0F );
+		(*Config_Reg) |= ( (Local_u8PinConfig) << Get_u8CRLH_Position(PinConfig->GPIO_PinNum)  );
+	}
+
+
+	//case pin is input , MODE = 0
+	else if ((PinConfig->GPIO_PinMode == GPIO_PIN_MODE_))
+	{
+
+	}
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidDeInit(GPIO_Typedef* GPIOx)
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+uint8_t  MCAL_GPIO_u8ReadPin(GPIO_Typedef* GPIOx,uint16_t copy_u16PinNumber)
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+uint16_t MCAL_GPIO_u16ReadPort(GPIO_Typedef* GPIOx)
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidWritePin(GPIO_Typedef* GPIOx,uint16_t copy_u16PinNumber,uint8_t copy_u8PinState)
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidWritePort(GPIO_Typedef* GPIOx,uint16_t copy_u16PortState)
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidTogglePin(GPIO_Typedef* GPIOx,uint16_t copy_u16PinNumber)
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidTogglePort(GPIO_Typedef* GPIOx)
+{
+
+}

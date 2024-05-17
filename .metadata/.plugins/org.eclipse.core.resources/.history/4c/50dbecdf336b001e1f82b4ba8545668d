@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 15, 2023
+ *      Author: Mustafa Hafez
+ */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+
+
+	char word1[8]= "Mustafa";
+	char word2[6] = "Hafez";
+
+//	scanf("%s %s",word1,word2);
+
+//	word1[3] = '\0';
+//	word2[3] = '\0';
+
+	printf("%s",strcat(word1,word2));
+	return 0;
+}
+

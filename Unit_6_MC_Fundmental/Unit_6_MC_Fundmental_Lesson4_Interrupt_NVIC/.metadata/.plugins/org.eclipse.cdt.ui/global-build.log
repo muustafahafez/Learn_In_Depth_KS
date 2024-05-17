@@ -1,0 +1,473 @@
+21:30:52 **** Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'EXTI0_IRQHandler':
+../Src/main.c:92:2: error: 'EXTI_PR' undeclared (first use in this function); did you mean 'EXTI_IMR'?
+  EXTI_PR |=(1<<0);
+  ^~~~~~~
+  EXTI_IMR
+../Src/main.c:92:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:32:01 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Toggle_LED_EXTI_NVIC.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson4_Interrupt_NVIC\Toggle_LED_EXTI_NVIC\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED_EXTI_NVIC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Toggle_LED_EXTI_NVIC.elf
+ 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+arm-none-eabi-objdump -h -S  Toggle_LED_EXTI_NVIC.elf  > "Toggle_LED_EXTI_NVIC.list"
+arm-none-eabi-objcopy  -O binary  Toggle_LED_EXTI_NVIC.elf  "Toggle_LED_EXTI_NVIC.bin"
+   text	   data	    bss	    dec	    hex	filename
+    628	      8	   1568	   2204	    89c	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Toggle_LED_EXTI_NVIC.list
+Finished building: Toggle_LED_EXTI_NVIC.bin
+ 
+ 
+21:55:18 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Toggle_LED_EXTI_NVIC.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson4_Interrupt_NVIC\Toggle_LED_EXTI_NVIC\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED_EXTI_NVIC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Toggle_LED_EXTI_NVIC.elf
+ 
+arm-none-eabi-objdump -h -S  Toggle_LED_EXTI_NVIC.elf  > "Toggle_LED_EXTI_NVIC.list"
+arm-none-eabi-objcopy  -O binary  Toggle_LED_EXTI_NVIC.elf  "Toggle_LED_EXTI_NVIC.bin"
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Toggle_LED_EXTI_NVIC.bin
+Finished building: Toggle_LED_EXTI_NVIC.list
+ 
+ 
+22:18:13 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Toggle_LED_EXTI_NVIC.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson4_Interrupt_NVIC\Toggle_LED_EXTI_NVIC\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED_EXTI_NVIC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Toggle_LED_EXTI_NVIC.elf
+ 
+arm-none-eabi-objdump -h -S  Toggle_LED_EXTI_NVIC.elf  > "Toggle_LED_EXTI_NVIC.list"
+arm-none-eabi-objcopy  -O binary  Toggle_LED_EXTI_NVIC.elf  "Toggle_LED_EXTI_NVIC.bin"
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Toggle_LED_EXTI_NVIC.list
+Finished building: Toggle_LED_EXTI_NVIC.bin
+ 
+ 
+22:18:14 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+22:29:19 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Toggle_LED_EXTI_NVIC.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson4_Interrupt_NVIC\Toggle_LED_EXTI_NVIC\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED_EXTI_NVIC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Toggle_LED_EXTI_NVIC.elf
+ 
+arm-none-eabi-objdump -h -S  Toggle_LED_EXTI_NVIC.elf  > "Toggle_LED_EXTI_NVIC.list"
+arm-none-eabi-objcopy  -O binary  Toggle_LED_EXTI_NVIC.elf  "Toggle_LED_EXTI_NVIC.bin"
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Toggle_LED_EXTI_NVIC.list
+Finished building: Toggle_LED_EXTI_NVIC.bin
+ 
+ 
+22:29:21 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	      8	   1568	   2356	    934	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+23:22:27 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Toggle_LED_EXTI_NVIC.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson4_Interrupt_NVIC\Toggle_LED_EXTI_NVIC\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED_EXTI_NVIC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Toggle_LED_EXTI_NVIC.elf
+ 
+arm-none-eabi-objdump -h -S  Toggle_LED_EXTI_NVIC.elf  > "Toggle_LED_EXTI_NVIC.list"
+arm-none-eabi-objcopy  -O binary  Toggle_LED_EXTI_NVIC.elf  "Toggle_LED_EXTI_NVIC.bin"
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Toggle_LED_EXTI_NVIC.list
+Finished building: Toggle_LED_EXTI_NVIC.bin
+ 
+ 
+23:22:41 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+17:34:23 **** Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Toggle_LED_EXTI_NVIC.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson4_Interrupt_NVIC\Toggle_LED_EXTI_NVIC\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED_EXTI_NVIC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Toggle_LED_EXTI_NVIC.elf
+ 
+arm-none-eabi-objdump -h -S  Toggle_LED_EXTI_NVIC.elf  > "Toggle_LED_EXTI_NVIC.list"
+arm-none-eabi-objcopy  -O binary  Toggle_LED_EXTI_NVIC.elf  "Toggle_LED_EXTI_NVIC.bin"
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Toggle_LED_EXTI_NVIC.bin
+Finished building: Toggle_LED_EXTI_NVIC.list
+ 
+ 
+19:47:22 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+19:47:23 **** Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+   text	   data	    bss	    dec	    hex	filename
+    848	      8	   1568	   2424	    978	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+ 
+ 
+19:59:31 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+19:59:32 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    848	      8	   1568	   2424	    978	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+ 
+ 
+20:11:09 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:11:09 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    844	      8	   1568	   2420	    974	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:11:29 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:11:30 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    844	      8	   1568	   2420	    974	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:29:36 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:29:37 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    836	      8	   1568	   2412	    96c	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:36:31 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:36:31 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:37:40 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:37:40 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+20:38:57 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:38:58 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+ 
+ 
+20:39:44 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:39:44 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:42:40 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:42:40 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:95:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+ 
+ 
+20:43:32 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:43:32 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    860	      8	   1568	   2436	    984	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:44:35 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:44:35 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    852	      8	   1568	   2428	    97c	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:47:10 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:47:11 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    876	      8	   1568	   2452	    994	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+ 
+ 
+20:57:42 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+20:57:43 **** Incremental Build of configuration Debug for project Unit_7_Microcontroller_Essential_GPIO_L1 ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Unit_7_Microcontroller_Essential_GPIO_L1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit7_MCU_Essential_Peripherals\Unit7_MCU_Essential_Peripherals_lesson1_GPIO_LAB1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Unit_7_Microcontroller_Essential_GPIO_L1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Unit_7_Microcontroller_Essential_GPIO_L1.elf
+ 
+arm-none-eabi-objdump -h -S  Unit_7_Microcontroller_Essential_GPIO_L1.elf  > "Unit_7_Microcontroller_Essential_GPIO_L1.list"
+arm-none-eabi-objcopy  -O binary  Unit_7_Microcontroller_Essential_GPIO_L1.elf  "Unit_7_Microcontroller_Essential_GPIO_L1.bin"
+arm-none-eabi-size   Unit_7_Microcontroller_Essential_GPIO_L1.elf 
+   text	   data	    bss	    dec	    hex	filename
+    888	      8	   1568	   2464	    9a0	Unit_7_Microcontroller_Essential_GPIO_L1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.bin
+Finished building: Unit_7_Microcontroller_Essential_GPIO_L1.list
+ 
+ 

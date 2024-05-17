@@ -1,0 +1,24 @@
+
+
+
+	static int Gloabal_intVar=0;
+
+
+int main ()
+{
+
+	int Local_intVar=1;
+
+
+
+
+
+
+	while(1)
+	{
+
+	}
+
+
+
+}

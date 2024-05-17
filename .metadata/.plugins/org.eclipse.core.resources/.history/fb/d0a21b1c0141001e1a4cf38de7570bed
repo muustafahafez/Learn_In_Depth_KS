@@ -1,0 +1,48 @@
+/*
+ * Obscal_Avoiding.c
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+
+#include "Obscal_Avoiding.h"
+#include "State.h"
+#include <stdio.h>
+
+int CA_Speed = 0;
+int CA_Distance = 0;
+int CA_Threshold = 50;
+STAT_ID Current_state = State_Waiting;
+
+//pointer to the function of the state
+
+extern void (*Pfunc)();
+
+STATE_DEF(CA_Waiting)
+{
+
+	//State name
+	Current_state = State_Waiting;
+	//State action
+	CA_Speed = 0;
+	//DC_Motor_Speed
+	//state event
+	(CA_Distance<=CA_Threshold)?(Pfunc= STATE(CA_Waiting)):(Pfunc= STATE(CA_Driving));
+	printf("CA_Waiting state: Distance = %d   Speed =%d \n",CA_Distance,CA_Speed);
+
+}
+
+STATE_DEF(CA_Driving)
+{
+
+	//State name
+	Current_state = State_Driving;
+	//State action
+	CA_Speed =30;
+	//DC_Motor_Speed
+	//state event
+	(CA_Distance<=CA_Threshold)?(Pfunc= STATE(CA_Waiting)):(Pfunc= STATE(CA_Driving));
+	printf("CA_Driving state: Distance = %d   Speed =%d \n",CA_Distance,CA_Speed);
+
+}

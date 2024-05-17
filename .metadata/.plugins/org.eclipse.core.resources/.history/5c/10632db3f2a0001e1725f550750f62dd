@@ -1,0 +1,28 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include "stdio.h"
+#include "interface.c"
+
+
+//void func();
+
+
+
+int main()
+{
+
+
+
+
+
+
+
+
+
+	return 0;
+}

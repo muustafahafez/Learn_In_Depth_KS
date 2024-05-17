@@ -1,0 +1,17 @@
+21:50:22 **** Rebuild of configuration Debug for project inline_func_test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\inline_func_test.o" "..\\src\\inline_func_test.c" 
+..\src\inline_func_test.c:28:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+..\src\inline_func_test.c: In function 'main':
+..\src\inline_func_test.c:32:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("d\n",f);
+         ^~~~~
+gcc -o inline_func_test.exe "src\\inline_func_test.o" 
+src\inline_func_test.o: In function `main':
+D:\KS_ES\inline function test\Debug/../src/inline_func_test.c:31: undefined reference to `factorial'
+collect2.exe: error: ld returned 1 exit status
+
+21:50:22 Build Finished (took 408ms)
+

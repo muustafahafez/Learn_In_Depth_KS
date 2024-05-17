@@ -1,0 +1,32 @@
+/*
+ * State.h
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef STATE_H_
+#define STATE_H_
+
+
+
+
+
+
+typedef enum
+{
+	State_Waiting,
+	State_Driving
+
+}STAT_ID;
+
+
+
+
+
+#define STATE_DEF(_STATE_FUNC)	void ST##_##_STATE_FUNC()
+#define STATE(_STATE_FUNC)	 ST##_##_STATE_FUNC
+
+
+
+#endif /* STATE_H_ */

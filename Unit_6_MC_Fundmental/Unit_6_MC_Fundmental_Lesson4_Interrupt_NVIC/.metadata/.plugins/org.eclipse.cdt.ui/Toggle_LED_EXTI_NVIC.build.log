@@ -1,0 +1,10 @@
+20:57:42 **** Incremental Build of configuration Debug for project Toggle_LED_EXTI_NVIC ****
+make -j12 all 
+arm-none-eabi-size   Toggle_LED_EXTI_NVIC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    760	      8	   1568	   2336	    920	Toggle_LED_EXTI_NVIC.elf
+Finished building: default.size.stdout
+ 
+
+20:57:43 Build Finished. 0 errors, 0 warnings. (took 343ms)
+

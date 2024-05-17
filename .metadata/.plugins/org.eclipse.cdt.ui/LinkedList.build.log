@@ -1,0 +1,8 @@
+02:33:32 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+gcc -o LinkedList.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file LinkedList.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+
+02:33:32 Build Finished (took 152ms)
+

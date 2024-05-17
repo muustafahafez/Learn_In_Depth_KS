@@ -1,0 +1,93 @@
+00:10:50 **** Incremental Build of configuration Debug for project Test_US ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:7:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'DMA_HandleTypeDef'?
+ TIM_HandleTypeDef htim2;
+ ^~~~~~~~~~~~~~~~~
+ DMA_HandleTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:34:5: warning: implicit declaration of function 'HAL_TIM_Base_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+     HAL_TIM_Base_Start(&htim2);
+     ^~~~~~~~~~~~~~~~~~
+     HAL_DMA_Start
+../Core/Src/main.c:40:31: warning: implicit declaration of function 'HAL_TIM_Base_Stop'; did you mean 'HAL_IS_BIT_SET'? [-Wimplicit-function-declaration]
+     uint32_t pulse_duration = HAL_TIM_Base_Stop(&htim2);
+                               ^~~~~~~~~~~~~~~~~
+                               HAL_IS_BIT_SET
+../Core/Src/main.c:43:11: warning: unused variable 'distance' [-Wunused-variable]
+     float distance = (pulse_duration * 0.0343) / 2;
+           ^~~~~~~~
+../Core/Src/main.c: In function 'SystemClock_Config':
+../Core/Src/main.c:57:3: warning: implicit declaration of function '__HAL_PWR_VOLTAGESCALING_CONFIG'; did you mean '__HAL_RCC_I2SCLK_CONFIG'? [-Wimplicit-function-declaration]
+   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   __HAL_RCC_I2SCLK_CONFIG
+../Core/Src/main.c:57:35: error: 'PWR_REGULATOR_VOLTAGE_SCALE1' undeclared (first use in this function)
+   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:57:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:65:5: warning: implicit declaration of function 'Error_Handler'; did you mean 'CEC_IRQHandler'? [-Wimplicit-function-declaration]
+     Error_Handler();
+     ^~~~~~~~~~~~~
+     CEC_IRQHandler
+../Core/Src/main.c: In function 'MX_TIM2_Init':
+../Core/Src/main.c:98:3: error: unknown type name 'TIM_MasterConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+   TIM_MasterConfigTypeDef sMasterConfig;
+   ^~~~~~~~~~~~~~~~~~~~~~~
+   EXTI_ConfigTypeDef
+../Core/Src/main.c:102:8: error: request for member 'Instance' in something not a structure or union
+   htim2.Instance = TIM2;
+        ^
+../Core/Src/main.c:103:8: error: request for member 'Init' in something not a structure or union
+   htim2.Init.Prescaler = 0;
+        ^
+../Core/Src/main.c:104:8: error: request for member 'Init' in something not a structure or union
+   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+        ^
+../Core/Src/main.c:104:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function); did you mean '__COUNTER__'?
+   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+                            ^~~~~~~~~~~~~~~~~~
+                            __COUNTER__
+../Core/Src/main.c:105:8: error: request for member 'Init' in something not a structure or union
+   htim2.Init.Period = 0xFFFF;
+        ^
+../Core/Src/main.c:106:8: error: request for member 'Init' in something not a structure or union
+   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+        ^
+../Core/Src/main.c:106:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:107:7: warning: implicit declaration of function 'HAL_TIM_Base_Init'; did you mean 'HAL_MspDeInit'? [-Wimplicit-function-declaration]
+   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~
+       HAL_MspDeInit
+../Core/Src/main.c:112:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+                ^
+../Core/Src/main.c:112:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function); did you mean 'TIM_RCR_REP'?
+   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+                                       ^~~~~~~~~~~~~~
+                                       TIM_RCR_REP
+../Core/Src/main.c:113:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+                ^
+../Core/Src/main.c:113:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function); did you mean 'SAI_MASTERDIVIDER_DISABLED'?
+   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                   SAI_MASTERDIVIDER_DISABLED
+../Core/Src/main.c:114:7: warning: implicit declaration of function 'HAL_TIMEx_MasterConfigSynchronization'; did you mean 'HAL_TIM_SlaveConfigSynchronization'? [-Wimplicit-function-declaration]
+   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       HAL_TIM_SlaveConfigSynchronization
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:120:6: warning: conflicting types for 'Error_Handler'
+ void Error_Handler(void)
+      ^~~~~~~~~~~~~
+../Core/Src/main.c:65:5: note: previous implicit declaration of 'Error_Handler' was here
+     Error_Handler();
+     ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:33: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+00:10:50 Build Failed. 15 errors, 8 warnings. (took 408ms)
+

@@ -1,0 +1,10 @@
+19:10:07 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+
+19:10:07 Build Finished. 0 errors, 0 warnings. (took 151ms)
+

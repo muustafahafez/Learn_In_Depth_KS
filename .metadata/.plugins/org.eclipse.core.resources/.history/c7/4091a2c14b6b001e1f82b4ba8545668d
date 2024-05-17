@@ -1,0 +1,31 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 15, 2023
+ *      Author: Mustafa Hafez
+ */
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+
+int var = 0xff112233;
+char* ptr = &var;
+
+
+printf("==========  %x  =========",*ptr);
+
+
+	return 0;
+}
+
+/*
+ * temp = i = 0
+ * i= 1
+ *
+ * so y[1] = x[0]
+ *
+ *
+ * */

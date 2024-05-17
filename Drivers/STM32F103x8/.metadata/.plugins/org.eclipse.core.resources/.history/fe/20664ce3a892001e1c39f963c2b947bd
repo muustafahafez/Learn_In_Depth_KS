@@ -1,0 +1,13 @@
+/*
+ * CortexMX_OS_Porting.h
+ *
+ *  Created on: Dec 4, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef INC_CORTEXMX_OS_PORTING_H_
+#define INC_CORTEXMX_OS_PORTING_H_
+
+
+
+#endif /* INC_CORTEXMX_OS_PORTING_H_ */

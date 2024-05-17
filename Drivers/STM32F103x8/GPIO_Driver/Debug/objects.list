@@ -1,0 +1,4 @@
+"GPIO/GPIO_C/GPIO.o"
+"Src/main.o"
+"Src/syscalls.o"
+"Src/sysmem.o"

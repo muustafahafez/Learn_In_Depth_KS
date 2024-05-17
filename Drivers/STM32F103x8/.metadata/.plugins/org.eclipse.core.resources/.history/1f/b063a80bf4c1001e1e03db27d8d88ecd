@@ -1,0 +1,42 @@
+
+
+#include "GPIO.h"
+
+
+
+
+void MCAL_GPIO_voidInit()
+{
+
+}
+void MCAL_GPIO_voidDeInit()
+{
+
+}
+
+uint8_t  MCAL_GPIO_u8ReadPin()
+{
+
+}
+uint16_t MCAL_GPIO_u16ReadPort()
+{
+
+}
+
+void MCAL_GPIO_voidWritePin()
+{
+
+}
+void MCAL_GPIO_voidWritePort()
+{
+
+}
+
+void MCAL_GPIO_voidTogglePin()
+{
+
+}
+void MCAL_GPIO_voidTogglePort()
+{
+
+}

@@ -1,0 +1,48 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include "Obscal_Avoiding.h"
+#include "State.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void Init(){
+
+	//Init All Drivers
+	//Init ISR
+	//Init Blocks
+	//Init your pointers
+	Pfunc = STATE(CA_Waiting);
+
+}
+
+
+
+void main()
+{
+
+	Init();
+	volatile int i =0;
+	while(1)
+	{
+		Pfunc();
+		for( i =0 ; i<20000; i++)
+		{
+			/*Delay*/
+		}
+
+	}
+
+
+
+
+
+
+
+
+}

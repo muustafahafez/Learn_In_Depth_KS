@@ -1,0 +1,2 @@
+SysTick.c:14:6:SysTick_voidInit	4	static
+SysTick.c:29:6:SysTick_voidStart	4	static

@@ -1,0 +1,39 @@
+18:56:15 **** Rebuild of configuration Debug for project TwoDim ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o TwoDimArr.o "..\\TwoDimArr.c" 
+..\TwoDimArr.c:3:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\TwoDimArr.c: In function 'main':
+..\TwoDimArr.c:7:18: warning: missing braces around initializer [-Wmissing-braces]
+  short num[3][2]={3,6,9,12,15,18};
+                  ^
+..\TwoDimArr.c:7:18: note: (near initialization for 'num')
+..\TwoDimArr.c:8:15: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  short * p1 = (num+1);
+               ^
+..\TwoDimArr.c:12:15: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  short * p4 = (num+2);
+               ^
+..\TwoDimArr.c:14:10: warning: unused variable 'p6' [-Wunused-variable]
+  short * p6 = (num+2)[1];
+          ^~
+..\TwoDimArr.c:13:10: warning: unused variable 'p5' [-Wunused-variable]
+  short * p5 = (num+2)[0];
+          ^~
+..\TwoDimArr.c:12:10: warning: unused variable 'p4' [-Wunused-variable]
+  short * p4 = (num+2);
+          ^~
+..\TwoDimArr.c:10:10: warning: unused variable 'p3' [-Wunused-variable]
+  short * p3 = (num+1)[1];
+          ^~
+..\TwoDimArr.c:9:10: warning: unused variable 'p2' [-Wunused-variable]
+  short * p2 = (num+1)[0];
+          ^~
+..\TwoDimArr.c:8:10: warning: unused variable 'p1' [-Wunused-variable]
+  short * p1 = (num+1);
+          ^~
+gcc -o TwoDim.exe TwoDimArr.o 
+
+18:56:15 Build Finished (took 420ms)
+

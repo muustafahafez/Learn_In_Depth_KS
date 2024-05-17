@@ -1,0 +1,4 @@
+TIMER.c:32:6:_TIM2_PWM_GPIO_MAPPING	16	static
+TIMER.c:66:6:MCAL_TIM2_Init	16	static
+TIMER.c:223:6:MCAL_TIM2_5_SetFreq	16	static
+TIMER.c:239:6:MCAL_TIM2_SetDuty	16	static

@@ -1,0 +1,30 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 15, 2023
+ *      Author: Mustafa Hafez
+ */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+
+
+	char word1[]= "Hello";
+	char word2[] = "my World";
+
+//	scanf("%s %s",word1,word2);
+
+//	word1[3] = '\0';
+//	word2[3] = '\0';
+
+//	printf("%s",strcat(strcat(word1," "),&word2[5]));
+	printf("%s",strcpy(word2,strcat(strcat(word1," "),&word2[5])));
+//	printf("\n%p",&word1);
+//	printf("\n%p",&word2);
+
+	return 0;
+}
+
+memcpy();

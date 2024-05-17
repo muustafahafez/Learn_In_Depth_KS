@@ -1,0 +1,17 @@
+/*
+ * Obscal_Avoiding.h
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef OBSCAL_AVOIDING_H_
+#define OBSCAL_AVOIDING_H_
+
+
+
+
+extern void (*Pfunc)();
+
+
+#endif /* OBSCAL_AVOIDING_H_ */

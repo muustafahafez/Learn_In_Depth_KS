@@ -1,0 +1,33 @@
+00:07:00 **** Rebuild of configuration Debug for project Obstcal_Avoiding ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Obscal_Avoiding.o "..\\Obscal_Avoiding.c" 
+..\Obscal_Avoiding.c: In function 'US_GetRandom_Distance':
+..\Obscal_Avoiding.c:64:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o DC_Motor.o "..\\DC_Motor.c" 
+..\DC_Motor.c:15:1: warning: data definition has no type or storage class
+ DC_STAT = DC_State_Running;
+ ^~~~~~~
+..\DC_Motor.c:15:1: warning: type defaults to 'int' in declaration of 'DC_STAT' [-Wimplicit-int]
+..\DC_Motor.c:15:11: error: 'DC_State_Running' undeclared here (not in a function)
+ DC_STAT = DC_State_Running;
+           ^~~~~~~~~~~~~~~~
+..\DC_Motor.c: In function 'ST_DC_Runinng':
+..\DC_Motor.c:30:2: error: 'CA_Distance' undeclared (first use in this function)
+  CA_Distance = US_GetRandom_Distance(45,55,1);
+  ^~~~~~~~~~~
+..\DC_Motor.c:30:2: note: each undeclared identifier is reported only once for each function it appears in
+..\DC_Motor.c:32:16: error: 'CA_Threshold' undeclared (first use in this function)
+  (CA_Distance<=CA_Threshold)?(DC_Pfunc= STATE(CA_Waiting)):(Pfunc= STATE(CA_Driving));
+                ^~~~~~~~~~~~
+..\DC_Motor.c:33:70: error: 'CA_Speed' undeclared (first use in this function)
+  printf("CA_Waiting state: Distance = %d   Speed =%d \n",CA_Distance,CA_Speed);
+                                                                      ^~~~~~~~
+..\DC_Motor.c: In function 'US_GetRandom_Distance':
+..\DC_Motor.c:46:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+
+00:07:00 Build Finished (took 383ms)
+

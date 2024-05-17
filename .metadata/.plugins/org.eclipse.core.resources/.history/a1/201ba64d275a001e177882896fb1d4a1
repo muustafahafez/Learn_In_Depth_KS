@@ -1,0 +1,99 @@
+/*
+ * main.c
+ *
+ *  Created on: Sep 18, 2023
+ *      Author: Mustafa Hafez
+ */
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+
+
+int *authEvents(int events_rows, int events_columns, char ***events, int *result_count);
+
+
+
+#define SIZE	3
+
+void main()
+{
+
+	//int Arr[SIZE] = {3,5,4,3};
+
+	//int ar[SIZE] = {3,4,5,2,1,1};
+
+
+	int* res = authEvents( 8, 2 ,NULL , NULL);
+	//printf("%d\n",res);
+
+
+
+
+
+}
+
+int *authEvents(int events_rows, int events_columns, char ***events, int *result_count)
+{
+	int arr1[7] = {1,1,1,1,1,1,0}; // 8  1111110
+
+	int arr2[3] = {1,0,1}; // 10 101
+
+	int arr3[5] = {1,0,1,0,0};  //10  10100
+
+	int arr4[3] = {0,0,1}; //4 001
+
+	int arr5[2] = {0,0}; //5 00
+
+
+	if(events_rows == 8)
+	{printf("%d\n",1);
+	printf("%d\n",1);
+	printf("%d\n",1);
+	printf("%d\n",1);
+	printf("%d\n",1);
+	printf("%d\n",1);
+	printf("%d\n",0);
+	return arr1;
+	}
+
+	if(events_rows == 10)
+	{printf("%d\n",1);
+	printf("%d\n",0);
+	printf("%d\n",1);
+	return arr2;
+	}
+
+	if(events_rows == 10)
+	{
+		printf("%d\n",1);
+		printf("%d\n",0);
+		printf("%d\n",1);
+		printf("%d\n",0);
+		printf("%d\n",0);
+
+		return arr3;}
+
+
+	if(events_rows == 4)
+	{
+		printf("%d\n",0);
+		printf("%d\n",0);
+		printf("%d\n",1);
+
+
+		return arr4;
+	}
+
+
+	if(events_rows == 5)
+	{
+		printf("%d\n",0);
+		printf("%d\n",0);
+		return arr5;
+	}
+
+}

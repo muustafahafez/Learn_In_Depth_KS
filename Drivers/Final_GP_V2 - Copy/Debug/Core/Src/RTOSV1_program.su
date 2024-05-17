@@ -1,0 +1,6 @@
+RTOSV1_program.c:21:6:HAL_IncTick	8	static
+RTOSV1_program.c:29:18:RTOS_voidNewTask	24	static
+RTOSV1_program.c:51:13:void_schedular	16	static
+RTOSV1_program.c:85:18:RTOS_voidDeleteTask	16	static
+RTOSV1_program.c:101:18:RTOS_voidResumeTask	16	static
+RTOSV1_program.c:117:18:RTOS_voidSuspendTask	16	static

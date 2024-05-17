@@ -1,0 +1,10 @@
+23:34:06 **** Incremental Build of configuration Debug for project Sprints ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:18:3: error: address of register variable 'y' requested
+   printf("%d\n",&y);
+   ^~~~~~
+
+23:34:06 Build Finished (took 141ms)
+

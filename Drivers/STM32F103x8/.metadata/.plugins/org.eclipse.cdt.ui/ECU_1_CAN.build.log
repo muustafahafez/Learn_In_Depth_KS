@@ -1,0 +1,10 @@
+16:53:32 **** Build of configuration Debug for project ECU_1_CAN ****
+make -j12 all 
+arm-none-eabi-size   ECU_1_CAN.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8132	     52	   1716	   9900	   26ac	ECU_1_CAN.elf
+Finished building: default.size.stdout
+ 
+
+16:53:32 Build Finished. 0 errors, 0 warnings. (took 186ms)
+

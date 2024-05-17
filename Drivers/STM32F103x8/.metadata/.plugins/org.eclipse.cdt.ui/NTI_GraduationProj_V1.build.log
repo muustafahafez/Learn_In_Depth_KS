@@ -1,0 +1,10 @@
+14:56:11 **** Incremental Build of configuration Debug for project NTI_GraduationProj_V1 ****
+make -j12 all 
+arm-none-eabi-size   NTI_GraduationProj_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7692	     28	   1732	   9452	   24ec	NTI_GraduationProj_V1.elf
+Finished building: default.size.stdout
+ 
+
+14:56:11 Build Finished. 0 errors, 0 warnings. (took 189ms)
+

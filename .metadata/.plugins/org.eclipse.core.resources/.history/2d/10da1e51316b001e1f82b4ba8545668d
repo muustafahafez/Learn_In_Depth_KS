@@ -1,0 +1,24 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 15, 2023
+ *      Author: Mustafa Hafez
+ */
+
+
+int main()
+{
+
+
+	char word1[5]= "AAAA";
+	char word2[5] = "BBBB";
+
+//	scanf("%s %s",word1,word2);
+
+	word1[3] = '\0';
+	word2[3] = '\0';
+
+	printf("%s %s ",word1,word2);
+	return 0;
+}
+

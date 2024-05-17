@@ -1,0 +1,12 @@
+16:08:48 **** Incremental Build of configuration Debug for project ARM_Cortex_M34 ****
+make -j12 all 
+arm-none-eabi-size   ARM_Cortex_M34.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2700	      8	   1632	   4340	   10f4	ARM_Cortex_M34.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy -O ihex ARM_Cortex_M34.elf ARM_Cortex_M34.axf
+ 
+
+16:08:49 Build Finished. 0 errors, 0 warnings. (took 1s.236ms)
+

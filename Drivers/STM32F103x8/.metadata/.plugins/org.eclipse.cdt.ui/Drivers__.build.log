@@ -1,0 +1,20 @@
+16:35:50 **** Incremental Build of configuration Debug for project Drivers__ ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/KS_ES/codes/Learn_In_Depth_KS/Drivers/STM32F103x8/Drivers__/STM32f103xx_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers__.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Drivers\STM32F103x8\Drivers__\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers__.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers__.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers__.elf  > "Drivers__.list"
+arm-none-eabi-objcopy  -O binary  Drivers__.elf  "Drivers__.bin"
+arm-none-eabi-size   Drivers__.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1404	      8	   1568	   2980	    ba4	Drivers__.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers__.bin
+Finished building: Drivers__.list
+ 
+ 
+
+16:35:51 Build Finished. 0 errors, 0 warnings. (took 1s.472ms)
+

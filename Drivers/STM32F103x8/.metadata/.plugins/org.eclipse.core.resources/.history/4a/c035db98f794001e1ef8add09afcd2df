@@ -1,0 +1,202 @@
+/*
+ * Schedular.c
+ *
+ *  Created on: Dec 4, 2023
+ *      Author: Mustafa Hafez
+ */
+
+
+#include "Schedular.h"
+#include "CortexMX_OS_Porting.h"
+#include "MYRTOS_FIFO.h"
+#include "string.h"
+
+#define Activate_Task	0
+#define Terminate_Task	1
+#define Task_Numbers	100
+
+struct {
+	Task_ref_t* OS_Tasks[Task_Numbers];
+	uint32_t _S_MSP_Task;
+	uint32_t _E_MSP_Task;
+	uint32_t PSP_Task_Locater; // help in locating tasks
+	uint32_t Active_Tasks_num;
+	Task_ref_t* Current_Task;
+	Task_ref_t* Next_Task;
+	enum{
+		OS_Suspend,
+		OS_Running
+	}OS_Mode;
+
+}OS_Control;
+
+FIFO_Buf_t Ready_QUEUE;
+Task_ref_t* Ready_QUEUE_FIFO[Task_Numbers];
+
+//Create Idle Task
+ Task_ref_t Idle_Task;
+
+
+void Reset_Handler		(void) 	{while(1);}
+void NMI_Handler		(void)	{while(1);}
+void HardFault_Handler	(void)  {while(1);}
+void MemManage_Handler	(void)  {while(1);}
+void BusFault_Handler	(void)  {while(1);}
+void UsageFault_Handler	(void)  {while(1);}
+
+
+
+
+void Idle_Task_Handler(void)
+{
+	__asm("NOP");
+}
+
+
+void OS_SVC( int* Stack_Fram)
+{
+	unsigned char SVC_Number;
+	SVC_Number = *((unsigned char*)(((unsigned char*)Stack_Fram[6])-2));
+	switch(SVC_Number)
+	{
+	case Activate_Task:
+		break;
+	case Terminate_Task:
+		break;
+
+	default: break;
+	}
+
+}
+
+void  OS_SVC_Set(int SVC_ID)
+{
+	switch(SVC_ID)
+	{
+	case 0 :
+		__asm("svc #0x00");
+		break;
+	case 1 :
+		__asm("svc #0x01");
+
+		break;
+	case 2 :
+		__asm("svc #0x02");
+
+		break;
+	case 3 :
+		__asm("svc #0x03");
+
+		break;
+	}
+}
+
+
+
+
+void PendSV_Handler(void)
+{
+while(1);
+}
+
+
+void RTOS_Init_Stack()
+{
+	// initialize main stack for OS
+	OS_Control._S_MSP_Task = &_estack;
+	OS_Control._E_MSP_Task = OS_Control._S_MSP_Task - Main_Stack_Size;
+	//Align 8 byte between Main Task and PSP tasks
+	OS_Control.PSP_Task_Locater = OS_Control._E_MSP_Task - 8;
+
+
+}
+
+RTOS_ErrorState_t Eldeep_OSInit()
+{
+
+	RTOS_ErrorState_t Error_State = RTOS_NoError;
+
+	//Update OS mode(suspend)
+	OS_Control.OS_Mode = OS_Suspend;
+	//Initialize Main stack for OS
+	RTOS_Init_Stack();
+	//create Tasks Ready Queue
+	if(FIFO_init(&Ready_QUEUE,Ready_QUEUE_FIFO , Task_Numbers) !=FIFO_NO_ERROR)
+	{
+		Error_State+=RTOS_Ready_Queue_Error;
+	}
+	// configure IDLE Task
+	Idle_Task.stack_size = 300;
+	Idle_Task.priority = 255; //Lowest
+	strcpy(Idle_Task.P_Task,"Idle_Task");
+	Idle_Task.P_Task = Idle_Task_Handler;
+	if(Eldeep_OSCreateTask(&Idle_Task)!=RTOS_NoError)
+	{
+		Error_State +=RTOS_CreateTask_Error;
+	}
+	return Error_State;
+}
+
+
+
+
+
+void MyRTOS_InitTaskStack(Task_ref_t* P_Task_cfg_t)
+{
+	/*Task Frame
+		 * ======
+		 * XPSR
+		 * PC (Next Task Instruction which should be Run)
+		 * LR (return register which is saved in CPU while TASk1 running before TaskSwitching)
+		 * r12
+		 * r4
+		 * r3
+		 * r2
+		 * r1
+		 * r0
+		 *====
+		 *r5, r6 , r7 ,r8 ,r9, r10,r11 (Saved/Restore)Manual
+		 */
+	*(P_Task_cfg_t->Current_Task_PSP)   = P_Task_cfg_t->_S_PSP_Task;
+	P_Task_cfg_t->Current_Task_PSP--;
+	*(P_Task_cfg_t->Current_Task_PSP)   = (uint32_t)0x01000000;  //DUMMY_XPSR should T =1 to avoid BUS fault
+	P_Task_cfg_t->Current_Task_PSP--;
+	*(P_Task_cfg_t->Current_Task_PSP)   = P_Task_cfg_t->P_Task;//PC
+	P_Task_cfg_t->Current_Task_PSP--;
+	*(P_Task_cfg_t->Current_Task_PSP)   = 0xFFFFFFFD ; //LR = 0xFFFFFFFD (EXC_RETURN)Return to thread with PSP
+
+
+		for (int  j=0 ; j< 13 ; j++ )
+		{
+			P_Task_cfg_t->Current_Task_PSP-- ;
+			*(P_Task_cfg_t->Current_Task_PSP)  = 0 ;
+
+		}
+}
+
+
+
+RTOS_ErrorState_t Eldeep_OSCreateTask(Task_ref_t* P_Task_cfg_t)
+{
+	RTOS_ErrorState_t Error_State = RTOS_NoError;
+
+	//create Task stack , start with locater , end according to user size
+	P_Task_cfg_t->_S_PSP_Task = OS_Control.PSP_Task_Locater;
+	P_Task_cfg_t->_E_PSP_Task = P_Task_cfg_t->_S_PSP_Task - P_Task_cfg_t->stack_size;
+	//check if exceeds the heap or not
+	if(P_Task_cfg_t->_E_PSP_Task<(unsigned int)&(_eheap))
+	{
+		return RTOS_Error_Heap_Exceeds;
+	}
+
+	//Align 8 byte between TASKn and TASKn+1
+	OS_Control.PSP_Task_Locater = P_Task_cfg_t->_E_PSP_Task - 8; ////////////////////////////
+	MyRTOS_InitTaskStack(P_Task_cfg_t);
+
+	return Error_State;
+
+}
+
+
+
+

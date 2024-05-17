@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NTI_GraduationProj_V1/Core/Inc/UltraSonic_config.h&apos; to &apos;UltraSonic.h&apos;" description="Rename resource &apos;UltraSonic_config.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/UltraSonic_config.h" name="UltraSonic.h" stamp="1701033264318" updateReferences="true"/>
+</session>

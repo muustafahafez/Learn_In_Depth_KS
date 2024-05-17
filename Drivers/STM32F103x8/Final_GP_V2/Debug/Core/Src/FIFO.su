@@ -1,0 +1,4 @@
+FIFO.c:18:14:FIFO_Init	24	static
+FIFO.c:32:14:FIFO_Enqueue	16	static
+FIFO.c:50:14:FIFO_Dequeue	16	static
+FIFO.c:66:14:FIFO_PrintAll	24	static

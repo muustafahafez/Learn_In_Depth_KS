@@ -1,0 +1,142 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 15, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+
+#define DPRINT(...)			{fflush(stdout); \
+		fflush(stdin); \
+		printf(__VA_ARGS__);\
+		fflush(stdout);\
+		fflush(stdin);}
+
+struct SData {
+
+	uint8_t Name[40];
+	uint32_t ID;
+	float Height;
+
+};
+
+struct SStudent_t  {
+
+	struct SData student;
+	struct SStudent_t * PNextStudent;
+
+};
+
+struct SStudent_t * Head = NULL;
+
+
+
+void  AddStudent();
+void PrintAll();
+
+void main(void)
+{
+
+
+	uint32_t choice=0;
+	DPRINT("================Enter Your Choice===============\n\n");
+	DPRINT("\t\t1-Add New Student\n");
+	DPRINT("\t\t2-Delete Student\n");
+	DPRINT("\t\t3-Print All Student\n");
+	DPRINT("\t\t4-Exit\n");
+	DPRINT("===============================================\n\n");
+	while(choice!=4)
+	{
+		scanf("%d",&choice);
+		switch(choice){
+
+		case (1) : AddStudent();  break;
+		case (2) :break;
+		case (3) :	 PrintAll();	break;
+
+		default: DPRINT("Wrong Choice\n");	break;
+
+		}
+
+
+
+	}
+}
+
+
+void  AddStudent()
+{
+	uint8_t temp[40];
+	struct SStudent_t * PLaststudent = Head;
+	struct SStudent_t * PNewStudent;
+
+	//check if the Head is Null, then you are the first student
+	if (Head == NULL)
+	{
+		//create new student
+
+		PNewStudent = (struct SStudent_t *) malloc(sizeof(struct SStudent_t *));
+		//Assign Head to the new student
+		Head =PNewStudent;
+
+	}
+	else{ //list not empty, so you need to reach the final node , assign its pointer to your new node , assign your new ponter node to null
+
+
+		//Loop till final node
+		while(PLaststudent->PNextStudent)
+		{
+			PLaststudent=PLaststudent->PNextStudent;
+		}
+		PNewStudent = (struct SStudent_t *) malloc(sizeof(struct SStudent_t *));
+		PNewStudent->PNextStudent=NULL;
+		PLaststudent->PNextStudent = PNewStudent;
+
+	}
+
+	//Record Data
+	DPRINT("Enter student name\n");
+	gets(PNewStudent->student.Name);
+
+	DPRINT("Enter student ID\n");
+	gets(temp);
+	PNewStudent->student.ID = atoi(temp);
+
+	DPRINT("Enter student Height\n");
+	gets(temp);
+	PNewStudent->student.Height = atof(temp);
+
+}
+
+
+void PrintAll(){
+	struct SStudent_t * PPrintStudent = Head;
+	uint32_t i=1;
+	//check if the head is Null , Then Empty list
+	if(Head == NULL)
+	{
+		DPRINT("Empty");
+	}
+	else
+	{
+
+		//navigate till end , and each time print the recorded data
+
+		while(PPrintStudent->PNextStudent)
+		{
+			DPRINT("Record %d\n",i);
+			DPRINT("\t\tStudent Name: %s\n",PPrintStudent->student.Name);
+			DPRINT("\t\tStudent ID: %d\n",PPrintStudent->student.ID);
+			DPRINT("\t\tStudent Height: %f\n",PPrintStudent->student.Height);
+			i++;
+			PPrintStudent = PPrintStudent->PNextStudent;
+		}
+
+	}
+
+
+}

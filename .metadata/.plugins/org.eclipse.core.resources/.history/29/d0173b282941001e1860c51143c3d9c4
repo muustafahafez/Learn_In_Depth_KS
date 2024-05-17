@@ -1,0 +1,33 @@
+/*
+ * Obscal_Avoiding.h
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef DC_Motor_H
+#define DC_Motor_H
+
+
+#include "State.h"
+
+
+
+typedef enum
+{
+	DC_State_Running
+
+}DC_STAT;
+
+
+
+STATE_DEF(DC_Runinng);
+
+
+extern void (*DC_Pfunc)();
+
+
+int US_GetRandom_Distance(int Low , int High , int counts);
+
+
+#endif /* OBSCAL_AVOIDING_H_ */

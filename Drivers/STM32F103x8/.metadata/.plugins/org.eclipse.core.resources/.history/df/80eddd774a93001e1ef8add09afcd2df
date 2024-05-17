@@ -1,0 +1,29 @@
+/*
+ * Schedular.h
+ *
+ *  Created on: Dec 4, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef INC_SCHEDULAR_H_
+#define INC_SCHEDULAR_H_
+
+#include "CortexMX_OS_Porting.h"
+
+
+
+typedef enum{
+	RTOS_NoError
+}RTOS_ErrorState_t;
+
+
+
+typedef struct {
+
+
+
+}Task_ref;
+
+
+
+#endif /* INC_SCHEDULAR_H_ */

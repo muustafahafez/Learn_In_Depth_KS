@@ -1,0 +1,10 @@
+16:53:36 **** Build of configuration Debug for project Mazen ****
+make -j12 all 
+arm-none-eabi-size   Mazen.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5668	     20	   1636	   7324	   1c9c	Mazen.elf
+Finished building: default.size.stdout
+ 
+
+16:53:36 Build Finished. 0 errors, 0 warnings. (took 185ms)
+

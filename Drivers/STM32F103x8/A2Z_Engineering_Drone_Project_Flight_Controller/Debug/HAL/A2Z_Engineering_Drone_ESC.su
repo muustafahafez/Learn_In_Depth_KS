@@ -1,0 +1,2 @@
+A2Z_Engineering_Drone_ESC.c:23:7:_ESC_PWM_SPEED_MAPPING	24	static
+A2Z_Engineering_Drone_ESC.c:46:6:HAL_ESC_SetMotorSpeed	32	static

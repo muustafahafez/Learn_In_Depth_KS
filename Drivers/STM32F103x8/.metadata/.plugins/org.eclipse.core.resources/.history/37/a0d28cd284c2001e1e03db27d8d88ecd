@@ -1,0 +1,138 @@
+
+
+#include "GPIO.h"
+
+
+uint8_t Get_u8CRLH_Position(uint16_t PinNum)
+{
+	uint8_t Pos;
+	switch(PinNum)
+	{
+	case PIN_NUM_0  : Pos = 2  ; break;
+	case PIN_NUM_1  : Pos = 6  ; break;
+	case PIN_NUM_2  : Pos = 10 ; break;
+	case PIN_NUM_3  : Pos = 14 ; break;
+	case PIN_NUM_4  : Pos = 18 ; break;
+	case PIN_NUM_5  : Pos = 22 ; break;
+	case PIN_NUM_6  : Pos = 26 ; break;
+	case PIN_NUM_7  : Pos = 30 ; break;
+	case PIN_NUM_8  : Pos = 2  ; break;
+	case PIN_NUM_9  : Pos = 6  ; break;
+	case PIN_NUM_10 : Pos = 10 ; break;
+	case PIN_NUM_11 : Pos = 14 ; break;
+	case PIN_NUM_12 : Pos = 18 ; break;
+	case PIN_NUM_13 : Pos = 22 ; break;
+	case PIN_NUM_14 : Pos = 26 ; break;
+	default			: Pos = 30 ; break;
+
+	}
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidInit(GPIO_Typedef* GPIOx,Pin_Config_t* PinConfig)
+{
+
+	//Which CR will be selected according to the pin number, PIN0:PIN7 -> CRL , PIN8:PIN14->CRH
+	//First, get the Position:
+
+
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidDeInit()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+uint8_t  MCAL_GPIO_u8ReadPin()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+uint16_t MCAL_GPIO_u16ReadPort()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidWritePin()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidWritePort()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidTogglePin()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidTogglePort()
+{
+
+}

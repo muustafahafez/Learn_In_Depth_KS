@@ -1,0 +1,54 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 15, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+
+
+struct SData {
+
+	uint8_t Name[40];
+	uint32_t ID;
+	float Height;
+
+};
+
+typedef struct Student_t  {
+
+	struct SData student;
+	struct Student_t* NextStudent;
+
+}SStudent_t;
+
+
+SStudent_t* Head;
+
+
+
+
+
+
+void main(void)
+{
+
+		uint8_t choice;
+		printf("================Enter Your Choice===============\n\n");
+		printf("\t\t1-Add New Student\n");
+		printf("\t\t2-Delete Student\n");
+		printf("\t\t2-Print All Student\n");
+		printf("===============================================\n\n");
+
+
+
+
+
+
+
+}
+

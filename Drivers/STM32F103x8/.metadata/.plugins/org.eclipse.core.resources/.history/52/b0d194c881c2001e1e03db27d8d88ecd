@@ -1,0 +1,110 @@
+
+
+#include "GPIO.h"
+
+
+
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidInit()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidDeInit()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+uint8_t  MCAL_GPIO_u8ReadPin()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+uint16_t MCAL_GPIO_u16ReadPort()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidWritePin()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidWritePort()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidTogglePin()
+{
+
+}
+/**================================================================
+* @Fn-
+* @brief -
+* @param [in] -
+* @param [out] -
+* @retval -
+* Note-
+*/
+
+void MCAL_GPIO_voidTogglePort()
+{
+
+}

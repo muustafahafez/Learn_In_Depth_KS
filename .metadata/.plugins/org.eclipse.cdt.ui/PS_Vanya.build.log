@@ -1,0 +1,7 @@
+18:56:13 **** Rebuild of configuration Debug for project PS_Vanya ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o PS_Vanya.exe main.o 
+
+18:56:13 Build Finished (took 440ms)
+

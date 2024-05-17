@@ -1,0 +1,7 @@
+"Core/Src/main.o"
+"Core/Src/stm32f103x8_EXTI_driver.o"
+"Core/Src/stm32f103x8_RCC_driver.o"
+"Core/Src/stm32f103x8_gpio_driver.o"
+"Core/Src/syscalls.o"
+"Core/Src/sysmem.o"
+"Core/Startup/startup_stm32f103c8tx.o"

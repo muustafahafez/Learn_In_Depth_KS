@@ -1,0 +1,1 @@
+Src/MYRTOS_FIFO.o: ../Src/MYRTOS_FIFO.c

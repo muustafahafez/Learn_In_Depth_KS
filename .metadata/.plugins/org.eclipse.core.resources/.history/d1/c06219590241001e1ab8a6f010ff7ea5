@@ -1,0 +1,63 @@
+/*
+ * Obscal_Avoiding.c
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+
+#include "Obscal_Avoiding.h"
+#include "State.h"
+#include <stdio.h>
+#include <stdlib.h>
+int CA_Speed = 0;
+int CA_Distance = 0;
+int CA_Threshold = 50;
+STAT_ID Current_state = State_Waiting;
+
+
+
+STATE_DEF(CA_Waiting)
+{
+
+	//State name
+	Current_state = State_Waiting;
+	//State action
+	CA_Speed = 0;
+	//DC_Motor_Speed
+
+	//Read from US
+	CA_Distance = US_GetRandom_Distance(45,55,1);
+	//state event
+	(CA_Distance<=CA_Threshold)?(Pfunc= STATE(CA_Waiting)):(Pfunc= STATE(CA_Driving));
+	printf("CA_Waiting state: Distance = %d   Speed =%d \n",CA_Distance,CA_Speed);
+
+}
+
+STATE_DEF(CA_Driving)
+{
+
+	//State name
+	Current_state = State_Driving;
+	//State action
+	CA_Speed =30;
+	//DC_Motor_Speed
+
+	//Read from US
+	CA_Distance = US_GetRandom_Distance(45,55,1);
+	//state event
+	(CA_Distance<=CA_Threshold)?(Pfunc= STATE(CA_Waiting)):(Pfunc= STATE(CA_Driving));
+	printf("CA_Driving state: Distance = %d   Speed =%d \n",CA_Distance,CA_Speed);
+
+}
+
+int US_GetRandom_Distance(int Low , int High , int counts){
+
+	int i ;
+	for(i =0; i<counts ; i++)
+	{
+		int random_num = (rand()% (High - Low +1))+1;
+		return random_num;
+	}
+	return 0;
+}

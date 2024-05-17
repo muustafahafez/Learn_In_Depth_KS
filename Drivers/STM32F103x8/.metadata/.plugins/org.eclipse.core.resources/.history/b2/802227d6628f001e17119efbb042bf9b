@@ -1,0 +1,29 @@
+#include "stm32f3xx_hal.h"
+
+void delay_ms(uint32_t ms) {
+  HAL_Delay(ms);
+}
+
+int main(void) {
+  // Initialize HAL library
+  HAL_Init();
+
+  // Enable GPIOA peripheral clock
+
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  // Configure PA5 as output (connected to the onboard LED)
+  GPIO_InitTypeDef GPIO_InitStruct;
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  while (1) {
+    // Toggle the LED
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+
+    // Delay for 500 milliseconds
+    delay_ms(2000);
+  }
+}

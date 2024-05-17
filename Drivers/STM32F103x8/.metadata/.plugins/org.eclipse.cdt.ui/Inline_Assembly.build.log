@@ -1,0 +1,7 @@
+18:59:10 **** Incremental Build of configuration Debug for project Inline_Assembly ****
+make -j12 all 
+make: *** No rule to make target 'all'.  Stop.
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+18:59:10 Build Failed. 1 errors, 0 warnings. (took 129ms)
+

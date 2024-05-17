@@ -1,0 +1,10 @@
+14:56:11 **** Incremental Build of configuration Debug for project ultrasonic_Keiluv ****
+make -j12 all 
+arm-none-eabi-size   ultrasonic_Keiluv.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7260	     20	   1660	   8940	   22ec	ultrasonic_Keiluv.elf
+Finished building: default.size.stdout
+ 
+
+14:56:11 Build Finished. 0 errors, 0 warnings. (took 186ms)
+

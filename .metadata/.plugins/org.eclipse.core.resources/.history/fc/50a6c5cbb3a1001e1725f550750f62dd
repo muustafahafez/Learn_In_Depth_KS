@@ -1,0 +1,32 @@
+/*
+ * main.c
+ *
+ *  Created on: Dec 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include "stdio.h"
+
+
+
+
+int main()
+{
+
+
+
+
+	funcccc();
+
+
+
+
+	return 0;
+}
+
+void funcccc()
+{
+
+
+
+}

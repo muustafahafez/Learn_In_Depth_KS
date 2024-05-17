@@ -1,327 +1,462 @@
-14:16:06 **** Build of configuration Debug for project Toggle_LED ****
+19:05:39 **** Clean-only build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 clean 
+rm -rf *
+ 
+19:05:43 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:05:43 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:05:44 **** Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
 make -j12 all 
 arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-../Src/main.c: In function 'main':
-../Src/main.c:32:11: warning: variable 'Data2' set but not used [-Wunused-but-set-variable]
-  uint32_t Data2 = 40;
-           ^~~~~
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-size   Toggle_LED.elf 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-   text	   data	    bss	    dec	    hex	filename
-    552	      8	   1568	   2128	    850	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
- 
-Finished building: Toggle_LED.list
- 
-14:16:44 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:32:20: warning: variable 'Data2' set but not used [-Wunused-but-set-variable]
-  volatile uint32_t Data2 = 40;
-                    ^~~~~
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    564	      8	   1568	   2140	    85c	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-14:44:46 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:30:34: error: unknown type name 'uint_t'
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18))
-                                  ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-../Src/main.c:30:60: error: expected ';' before ')' token
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18))
-                                                            ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-../Src/main.c:30:60: error: expected statement before ')' token
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18))
-                                                            ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-../Src/main.c:60:13: error: expected expression before '|=' token
- RCC_APB2ENR |= (1<<IOPAEN);
-             ^~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:45:12 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:30:34: error: unknown type name 'uint_t'
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18)
-                                  ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:45:15 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:30:34: error: unknown type name 'uint_t'
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18)
-                                  ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:45:16 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:30:34: error: unknown type name 'uint_t'
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18)
-                                  ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:46:25 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:30:34: error: unknown type name 'uint_t'
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18)
-                                  ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:46:26 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:30:34: error: unknown type name 'uint_t'
- #define RCC_APB2ENR   *(volatile uint_t*) (RCC_Base + 0x18)
-                                  ^
-../Src/main.c:60:1: note: in expansion of macro 'RCC_APB2ENR'
- RCC_APB2ENR |= (1<<IOPAEN);
- ^~~~~~~~~~~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:47:11 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    564	      8	   1568	   2140	    85c	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-14:53:18 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:36:63: error: expected ';' before ')' token
- #define GPIOAC_CRH   *(volatile uint32_t*) (GPIOA_Base + 0x04))
-                                                               ^
-../Src/main.c:61:1: note: in expansion of macro 'GPIOAC_CRH'
- GPIOAC_CRH &= 0xff0fffff;
- ^~~~~~~~~~
-../Src/main.c:36:63: error: expected statement before ')' token
- #define GPIOAC_CRH   *(volatile uint32_t*) (GPIOA_Base + 0x04))
-                                                               ^
-../Src/main.c:61:1: note: in expansion of macro 'GPIOAC_CRH'
- GPIOAC_CRH &= 0xff0fffff;
- ^~~~~~~~~~
-../Src/main.c:61:12: error: expected expression before '&=' token
- GPIOAC_CRH &= 0xff0fffff;
-            ^~
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-14:54:13 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    580	      8	   1568	   2156	    86c	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-14:55:09 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    588	      8	   1568	   2164	    874	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-14:57:57 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    608	      8	   1568	   2184	    888	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-14:58:00 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    608	      8	   1568	   2184	    888	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-14:58:01 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    608	      8	   1568	   2184	    888	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-16:18:49 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    608	      8	   1568	   2184	    888	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-16:21:33 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c:36:24: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
- volatile ODR_t* ODR =  *(volatile uint32_t*) (GPIOA_Base + 0x0c);
-                        ^
-../Src/main.c:36:24: error: initializer element is not constant
-make: *** [Src/subdir.mk:24: Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-16:21:47 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O3 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c:36:24: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
- volatile ODR_t* ODR =  (volatile uint32_t*) (GPIOA_Base + 0x0c);
-                        ^
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    612	     12	   1564	   2188	    88c	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
- 
- 
-16:21:49 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    612	     12	   1564	   2188	    88c	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-16:21:51 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
-arm-none-eabi-size   Toggle_LED.elf 
-   text	   data	    bss	    dec	    hex	filename
-    612	     12	   1564	   2188	    88c	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-16:22:38 **** Incremental Build of configuration Debug for project Toggle_LED ****
-make -j12 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
 arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
 arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-../Src/main.c:36:24: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
- volatile ODR_t* ODR =  (volatile uint32_t*) (GPIOA_Base + 0x0c);
-                        ^
-arm-none-eabi-gcc -o "Toggle_LED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_3_Embedded_C\unit_3_lesson_1_Embedded_C\Toggle_LED\Toggle_LED\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Toggle_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Toggle_LED.elf
- 
-arm-none-eabi-objdump -h -S  Toggle_LED.elf  > "Toggle_LED.list"
-arm-none-eabi-objcopy  -O binary  Toggle_LED.elf  "Toggle_LED.bin"
-arm-none-eabi-size   Toggle_LED.elf 
-arm-none-eabi-objcopy  -O ihex  Toggle_LED.elf  "Toggle_LED.hex"
-   text	   data	    bss	    dec	    hex	filename
-    672	     12	   1564	   2248	    8c8	Toggle_LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Toggle_LED.bin
-Finished building: Toggle_LED.list
-Finished building: Toggle_LED.hex
- 
- 
- 
-16:22:39 **** Incremental Build of configuration Debug for project Toggle_LED ****
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE+ 0x04)
+                    ^
+../Src/main.c:64:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR|=0b0110<<18;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:06:12 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
 make -j12 all 
-arm-none-eabi-size   Toggle_LED.elf 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
    text	   data	    bss	    dec	    hex	filename
-    672	     12	   1564	   2248	    8c8	Toggle_LED.elf
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
 Finished building: default.size.stdout
+ 
+19:06:12 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:06:12 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:64:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR|=0b0110<<18;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:06:42 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:06:43 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:06:43 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:64:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR |= 0b0110<<18;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:28 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:28 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:28 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:66:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR |= 0b0000<<4;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:30 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:30 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:30 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:66:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR |= 0b0000<<4;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:34 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:34 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:35 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:60:2: error: 'RCC_CFGR' undeclared (first use in this function); did you mean 'RCC_CR'?
+  RCC_CFGR |= 0b10<<0;
+  ^~~~~~~~
+  RCC_CR
+../Src/main.c:60:2: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:66:2: error: expected ';' before 'RCC_CFGR'
+  RCC_CFGR |= 0b0000<<4;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:38 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:38 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:39 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:66:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR |= 0b0000<<4;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:40 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:40 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:40 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:66:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR |= 0b0000<<4;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:45 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:46 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:46 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:64:2: note: in expansion of macro 'RCC_CFGR'
+  RCC_CFGR |= 0b0110<<18;
+  ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:07:58 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:07:58 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:07:58 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:20: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR   *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                    ^
+../Src/main.c:64:3: note: in expansion of macro 'RCC_CFGR'
+   RCC_CFGR |= 0b0110<<18;
+   ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:08:40 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:08:40 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:08:40 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:18: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                  ^
+../Src/main.c:64:3: note: in expansion of macro 'RCC_CFGR'
+   RCC_CFGR |= 0b0110<<18;
+   ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:08:51 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:08:52 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:08:52 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:19: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR  *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                   ^
+../Src/main.c:64:3: note: in expansion of macro 'RCC_CFGR'
+   RCC_CFGR |= 0b0110<<18;
+   ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:09:24 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:09:24 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:09:24 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:19: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR  *( vuint32_t*)(RCC_BASE + 0x04)
+                   ^
+../Src/main.c:64:3: note: in expansion of macro 'RCC_CFGR'
+   RCC_CFGR |= 0b0110<<18;
+   ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:09:30 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:09:31 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:09:31 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:19: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR  *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                   ^
+../Src/main.c:64:3: note: in expansion of macro 'RCC_CFGR'
+   RCC_CFGR |= 0b0110<<18;
+   ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:09:40 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:09:40 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:09:40 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab3_Unit6_Lesson3_config_sys_clock.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson3\Lab3_Unit6_Lesson3_config_sys_clock\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab3_Unit6_Lesson3_config_sys_clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab3_Unit6_Lesson3_config_sys_clock.elf
+ 
+arm-none-eabi-size   Lab3_Unit6_Lesson3_config_sys_clock.elf 
+arm-none-eabi-objdump -h -S  Lab3_Unit6_Lesson3_config_sys_clock.elf  > "Lab3_Unit6_Lesson3_config_sys_clock.list"
+arm-none-eabi-objcopy  -O binary  Lab3_Unit6_Lesson3_config_sys_clock.elf  "Lab3_Unit6_Lesson3_config_sys_clock.bin"
+   text	   data	    bss	    dec	    hex	filename
+    748	      8	   1568	   2324	    914	Lab3_Unit6_Lesson3_config_sys_clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab3_Unit6_Lesson3_config_sys_clock.bin
+Finished building: Lab3_Unit6_Lesson3_config_sys_clock.list
+ 
+ 
+19:09:49 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:09:49 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:09:49 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:51:19: error: invalid operands to binary * (have 'int' and 'volatile vuint32_t * {aka volatile unsigned int *}')
+ #define RCC_CFGR  *(volatile vuint32_t*)(RCC_BASE + 0x04)
+                   ^
+../Src/main.c:64:3: note: in expansion of macro 'RCC_CFGR'
+   RCC_CFGR |= 0b0110<<18;
+   ^~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:10:07 **** Incremental Build of configuration Debug for project Lab1_Unit6_Lesson3 ****
+make -j12 all 
+arm-none-eabi-size   Lab1_Unit6_Lesson3.elf 
+   text	   data	    bss	    dec	    hex	filename
+    672	      8	   1568	   2248	    8c8	Lab1_Unit6_Lesson3.elf
+Finished building: default.size.stdout
+ 
+19:10:07 **** Incremental Build of configuration Debug for project Lab2_Unit6_Lesson3_Config_Sys_Clocks ****
+make -j12 all 
+arm-none-eabi-size   Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf 
+   text	   data	    bss	    dec	    hex	filename
+    716	      8	   1568	   2292	    8f4	Lab2_Unit6_Lesson3_Config_Sys_Clocks.elf
+Finished building: default.size.stdout
+ 
+19:10:07 **** Incremental Build of configuration Debug for project Lab3_Unit6_Lesson3_config_sys_clock ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab3_Unit6_Lesson3_config_sys_clock.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\KS_ES\codes\Learn_In_Depth_KS\Unit_6_MC_Fundmental\Unit_6_MC_Fundmental_Lesson3\Lab3_Unit6_Lesson3_config_sys_clock\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab3_Unit6_Lesson3_config_sys_clock.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab3_Unit6_Lesson3_config_sys_clock.elf
+ 
+arm-none-eabi-objdump -h -S  Lab3_Unit6_Lesson3_config_sys_clock.elf  > "Lab3_Unit6_Lesson3_config_sys_clock.list"
+arm-none-eabi-objcopy  -O binary  Lab3_Unit6_Lesson3_config_sys_clock.elf  "Lab3_Unit6_Lesson3_config_sys_clock.bin"
+arm-none-eabi-size   Lab3_Unit6_Lesson3_config_sys_clock.elf 
+   text	   data	    bss	    dec	    hex	filename
+    748	      8	   1568	   2324	    914	Lab3_Unit6_Lesson3_config_sys_clock.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab3_Unit6_Lesson3_config_sys_clock.list
+Finished building: Lab3_Unit6_Lesson3_config_sys_clock.bin
+ 
  

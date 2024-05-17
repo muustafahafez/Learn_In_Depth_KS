@@ -1,0 +1,12 @@
+13:49:35 **** Rebuild of configuration Debug for project Test_Swift_Act ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o file2.o "..\\file2.c" 
+..\file2.c:13:8: error: expected declaration specifiers or '...' before string constant
+ printf("%d",x);
+        ^~~~
+..\file2.c:13:13: error: expected declaration specifiers or '...' before 'x'
+ printf("%d",x);
+             ^
+
+13:49:35 Build Finished (took 169ms)
+

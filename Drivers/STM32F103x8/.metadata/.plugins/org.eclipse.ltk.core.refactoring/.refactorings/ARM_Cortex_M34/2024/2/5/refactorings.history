@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;stm32f103x8_EXTI_driver.c&apos; to &apos;GPIO&apos;" description="Move &apos;stm32f103x8_EXTI_driver.c&apos; to &apos;GPIO&apos;" destination="Stm32_F103C6_Drivers/GPIO" element1="Stm32_F103C6_Drivers/stm32f103x8_EXTI_driver.c" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1706806477097" updateReferences="true"/>
+</session>

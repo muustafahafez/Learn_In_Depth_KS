@@ -1,0 +1,24 @@
+/*
+ * MYRTOS_CortexMX_Porting.h
+ *
+ *  Created on: Jan 30, 2024
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef MYRTOS_CORTEXMX_PORTING_H_
+#define MYRTOS_CORTEXMX_PORTING_H_
+
+#define SET_PSP(add)
+#define GET_PSP(add)
+
+#define SWITCH_SP_TO_MSP
+#define SWITCH_SP_TO_PSP
+
+#define SWITCH_TO_PRIVILLAGE
+#define SWITCH_TO_UNPRIVILLAGE
+
+
+
+
+
+#endif /* MYRTOS_CORTEXMX_PORTING_H_ */

@@ -1,0 +1,28 @@
+/*
+ * State.h
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#ifndef STATE_H_
+#define STATE_H_
+
+
+
+
+
+
+
+
+
+
+
+
+#define STATE_DEF(_STATE_FUNC)	void ST##_##_STATE_FUNC()
+
+
+STATE_DEF(OBSTCAL_Avoiding_Waiting);
+STATE_DEF(OBSTCAL_Avoiding_Drive);
+
+#endif /* STATE_H_ */

@@ -1,0 +1,17 @@
+/*
+ * file2.c
+ *
+ *  Created on: Sep 7, 2023
+ *      Author: Mustafa Hafez
+ */
+
+#include <stdio.h>
+
+
+extern int arr[];
+
+
+printf("%d",arr[0]);
+
+
+
