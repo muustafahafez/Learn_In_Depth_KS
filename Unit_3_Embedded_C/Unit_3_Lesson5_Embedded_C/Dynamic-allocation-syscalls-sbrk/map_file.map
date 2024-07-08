@@ -1,8 +1,44 @@
+Archive member included because of file (symbol)
+
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+                              main.o (malloc)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o) (_malloc_r)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o) (_sbrk_r)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o) (_free_r)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o) (_impure_ptr)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o) (__retarget_lock_acquire_recursive)
+./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                              ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o) (errno)
 
 Allocating common symbols
 Common symbol       size              file
 
+__lock___atexit_recursive_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+__lock___arc4random_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+errno               0x4               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+__lock___env_recursive_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+__lock___sinit_recursive_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+__lock___malloc_recursive_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
 Global_unitial_bss  0x188             main.o
+__lock___at_quick_exit_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+__lock___dd_hash_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+__lock___tz_mutex   0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+__lock___sfp_recursive_mutex
+                    0x1               ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
 
 Memory Configuration
 
@@ -14,7 +50,7 @@ sram             0x20000000         0x00005000         xrw
 Linker script and memory map
 
 
-.text           0x08000000      0x218
+.text           0x08000000      0xfa0
                 0x08000000                _S_TEXT = .
  *(.vectors*)
  .vectors       0x08000000       0x1c startup.o
@@ -31,28 +67,98 @@ Linker script and memory map
                 0x0800015c                _Bus_Fault
                 0x0800015c                _Usage_Fault_Handler
                 0x08000168                _Reset_Handler
+ .text          0x08000218        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .text.malloc   0x08000218       0x20 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+                0x08000218                malloc
+ .text.free     0x08000238       0x20 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+                0x08000238                free
+ .text          0x08000258        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .text._malloc_r
+                0x08000258      0x7ac ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08000258                _malloc_r
+ .text          0x08000a04        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .text.__malloc_lock
+                0x08000a04       0x18 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+                0x08000a04                __malloc_lock
+ .text.__malloc_unlock
+                0x08000a1c       0x18 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+                0x08000a1c                __malloc_unlock
+ .text          0x08000a34        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .text._sbrk_r  0x08000a34       0x3c ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+                0x08000a34                _sbrk_r
+ .text          0x08000a70        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .text._malloc_trim_r
+                0x08000a70      0x100 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+                0x08000a70                _malloc_trim_r
+ .text._free_r  0x08000b70      0x2dc ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+                0x08000b70                _free_r
+ .text          0x08000e4c        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .text          0x08000e4c        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+ .text.__retarget_lock_init
+                0x08000e4c        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e4c                __retarget_lock_init
+ .text.__retarget_lock_init_recursive
+                0x08000e50        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e50                __retarget_lock_init_recursive
+ .text.__retarget_lock_close
+                0x08000e54        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e54                __retarget_lock_close
+ .text.__retarget_lock_close_recursive
+                0x08000e58        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e58                __retarget_lock_close_recursive
+ .text.__retarget_lock_acquire
+                0x08000e5c        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e5c                __retarget_lock_acquire
+ .text.__retarget_lock_acquire_recursive
+                0x08000e60        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e60                __retarget_lock_acquire_recursive
+ .text.__retarget_lock_try_acquire
+                0x08000e64        0x8 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e64                __retarget_lock_try_acquire
+ .text.__retarget_lock_try_acquire_recursive
+                0x08000e6c        0x8 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e6c                __retarget_lock_try_acquire_recursive
+ .text.__retarget_lock_release
+                0x08000e74        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e74                __retarget_lock_release
+ .text.__retarget_lock_release_recursive
+                0x08000e78        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x08000e78                __retarget_lock_release_recursive
+ .text          0x08000e7c        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .text.cleanup_glue
+                0x08000e7c       0x34 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                0x08000e7c                cleanup_glue
+ .text._reclaim_reent
+                0x08000eb0       0xf0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                0x08000eb0                _reclaim_reent
  *(.rodata)
-                0x08000218                _E_TEXT = .
+                0x08000fa0                _E_TEXT = .
 
-.glue_7         0x08000218        0x0
+.rodata._global_impure_ptr
+                0x08000fa0        0x4
+ .rodata._global_impure_ptr
+                0x08000fa0        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x08000fa0                _global_impure_ptr
+
+.glue_7         0x08000fa4        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x08000218        0x0
+.glue_7t        0x08000fa4        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x08000218        0x0
+.vfp11_veneer   0x08000fa4        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x08000218        0x0
+.v4_bx          0x08000fa4        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x08000218        0x0
+.iplt           0x08000fa4        0x0
  .iplt          0x00000000        0x0 main.o
 
-.rel.dyn        0x08000218        0x0
+.rel.dyn        0x08000fa4        0x0
  .rel.iplt      0x00000000        0x0 main.o
 
-.data           0x20000000       0x90 load address 0x08000218
+.data           0x20000000       0x90 load address 0x08000fa4
                 0x20000000                _S_DATA = .
  *(.data)
  .data          0x20000000       0x90 main.o
@@ -60,31 +166,114 @@ Linker script and memory map
                 0x20000004                Global_Var
                 0x20000064                const_Global_Var
  .data          0x20000090        0x0 startup.o
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+ .data          0x20000090        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
                 0x20000090                . = ALIGN (0x4)
                 0x20000090                _E_DATA = .
 
-.igot.plt       0x20000090        0x0 load address 0x080002a8
+.igot.plt       0x20000090        0x0 load address 0x08001034
  .igot.plt      0x00000000        0x0 main.o
 
-.bss            0x20000090     0x218c load address 0x080002a8
-                0x20000090                _S_BSS = .
+.data.__malloc_av_
+                0x20000090      0x408 load address 0x08001034
+ .data.__malloc_av_
+                0x20000090      0x408 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x20000090                __malloc_av_
+
+.data.__malloc_sbrk_base
+                0x20000498        0x4 load address 0x0800143c
+ .data.__malloc_sbrk_base
+                0x20000498        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x20000498                __malloc_sbrk_base
+
+.data.__malloc_trim_threshold
+                0x2000049c        0x4 load address 0x08001440
+ .data.__malloc_trim_threshold
+                0x2000049c        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x2000049c                __malloc_trim_threshold
+
+.data._impure_ptr
+                0x200004a0        0x4 load address 0x08001444
+ .data._impure_ptr
+                0x200004a0        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x200004a0                _impure_ptr
+
+.data.impure_data
+                0x200004a8      0x428 load address 0x08001448
+ .data.impure_data
+                0x200004a8      0x428 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+
+.bss            0x200008d0     0x21b4 load address 0x08001870
+                0x200008d0                _S_BSS = .
  *(.bss)
- .bss           0x20000090        0x4 main.o
- .bss           0x20000094        0x0 startup.o
-                0x20000094                _E_BSS = .
-                0x20000094                . = ALIGN (0x4)
-                0x20001094                . = (. + 0x1000)
- *fill*         0x20000094     0x1000 
-                0x20001094                _E_HEAP = .
-                0x20001094                . = ALIGN (0x4)
-                0x20002094                . = (. + 0x1000)
- *fill*         0x20001094     0x1000 
-                0x20002094                _stack_top = .
- COMMON         0x20002094      0x188 main.o
-                0x20002094                Global_unitial_bss
+ .bss           0x200008d0        0x4 main.o
+ .bss           0x200008d4        0x0 startup.o
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+ .bss           0x200008d4        0x0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                0x200008d4                _E_BSS = .
+                0x200008d4                . = ALIGN (0x4)
+                0x200018d4                . = (. + 0x1000)
+ *fill*         0x200008d4     0x1000 
+                0x200018d4                _E_HEAP = .
+                0x200018d4                . = ALIGN (0x4)
+                0x200028d4                . = (. + 0x1000)
+ *fill*         0x200018d4     0x1000 
+                0x200028d4                _stack_top = .
+ COMMON         0x200028d4      0x188 main.o
+                0x200028d4                Global_unitial_bss
+ COMMON         0x20002a5c       0x21 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+                0x20002a5c                __lock___atexit_recursive_mutex
+                0x20002a60                __lock___arc4random_mutex
+                0x20002a64                __lock___env_recursive_mutex
+                0x20002a68                __lock___sinit_recursive_mutex
+                0x20002a6c                __lock___malloc_recursive_mutex
+                0x20002a70                __lock___at_quick_exit_mutex
+                0x20002a74                __lock___dd_hash_mutex
+                0x20002a78                __lock___tz_mutex
+                0x20002a7c                __lock___sfp_recursive_mutex
+ *fill*         0x20002a7d        0x3 
+ COMMON         0x20002a80        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                0x20002a80                errno
 LOAD main.o
 LOAD startup.o
+LOAD ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a
 OUTPUT(Toggle_LED_Cortex_m3.elf elf32-littlearm)
+
+.bss.__malloc_current_mallinfo
+                0x20002a84       0x28 load address 0x08001870
+ .bss.__malloc_current_mallinfo
+                0x20002a84       0x28 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x20002a84                __malloc_current_mallinfo
+
+.bss.__malloc_max_sbrked_mem
+                0x20002aac        0x4 load address 0x08001870
+ .bss.__malloc_max_sbrked_mem
+                0x20002aac        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x20002aac                __malloc_max_sbrked_mem
+
+.bss.__malloc_max_total_mem
+                0x20002ab0        0x4 load address 0x08001870
+ .bss.__malloc_max_total_mem
+                0x20002ab0        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x20002ab0                __malloc_max_total_mem
+
+.bss.__malloc_top_pad
+                0x20002ab4        0x4 load address 0x08001870
+ .bss.__malloc_top_pad
+                0x20002ab4        0x4 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x20002ab4                __malloc_top_pad
 
 .debug_info     0x00000000      0x3f6
  .debug_info    0x00000000      0x249 main.o
@@ -120,12 +309,35 @@ OUTPUT(Toggle_LED_Cortex_m3.elf elf32-littlearm)
  .comment       0x00000000       0x12 startup.o
 
 .ARM.attributes
-                0x00000000       0x33
+                0x00000000       0x35
  .ARM.attributes
                 0x00000000       0x33 main.o
  .ARM.attributes
                 0x00000033       0x33 startup.o
+ .ARM.attributes
+                0x00000066       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000096       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x000000c6       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x000000f6       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000126       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x00000156       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000186       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+ .ARM.attributes
+                0x000001b6       0x30 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
 
-.debug_frame    0x00000000       0x98
+.debug_frame    0x00000000      0x37c
  .debug_frame   0x00000000       0x4c main.o
  .debug_frame   0x0000004c       0x4c startup.o
+ .debug_frame   0x00000098       0x48 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .debug_frame   0x000000e0       0x94 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00000174       0x48 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .debug_frame   0x000001bc       0x34 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x000001f0       0x74 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .debug_frame   0x00000264       0xb0 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-lock.o)
+ .debug_frame   0x00000314       0x68 ./../../../Unit3_Lesson2_Embedded_C/ARM/arm-none-eabi/lib/libc.a(lib_a-reent.o)
