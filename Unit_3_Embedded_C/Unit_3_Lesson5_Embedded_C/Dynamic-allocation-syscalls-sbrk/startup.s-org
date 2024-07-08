@@ -1,0 +1,36 @@
+/*
+File Name: Startup.s 
+Processor: Cortex-m
+Auther:	   Mustafa Hafez
+Version:   V1.0
+Date:	   19/5/2023
+*/
+
+/*In this family, the address at the entery point will be used to intialize the stack pointer
+The stack pointer is a place in SRAM, so we need the begganing address of SRAM which will be the start address for stack*/
+
+
+
+
+/*  .word  this mean that we will put that address at a 4-Byte (word)*/
+/*  .section .section_name  this mean that we will put the following Lines in the section_name */
+
+
+.section .vectors
+.word 0x20001000   /*stack top address*/
+.word _reset
+.word _Vector_Handler         /*here we had to put the NMI interrupt from vector table*/
+.word _Vector_Handler	      /*here we had to put the Hardfault interrupt from vector table.*/
+
+							  /*But we pass all interrupts to Vector Handler section and there, we handle them*/
+
+
+.section .text
+_reset:
+	bl main
+	b .
+.thumb_func 				/* As this family has a 16 and 32 bit instructions*/
+_Vector_Handler:
+	b _reset
+
+
